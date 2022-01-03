@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>A Tinkerer&#39;s Canvas</title>
+    <link>https://anuran-roy.github.io/</link>
+    <description>Recent content on A Tinkerer&#39;s Canvas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Nov 2021 01:33:47 +0530</lastBuildDate><atom:link href="https://anuran-roy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flow classes in Pymetrix</title>
+      <link>https://anuran-roy.github.io/post/projects/pymetrix/flow/</link>
+      <pubDate>Sat, 20 Nov 2021 01:33:47 +0530</pubDate>
+      
+      <guid>https://anuran-roy.github.io/post/projects/pymetrix/flow/</guid>
+      <description>Download as .zip Download as .tar.gz View on Github        Introduction The Flow Class objects make the building blocks of Pymetrix (Previously Analyx).
+All functions of Pymetrix are built upon the Flow Objects.
+How do they work? Flow objects are of 3 types:
+ Flow Node Flow Layer Flow Graph  Here, each successive element is a collection of the previous one.
+Anatomy FlowNode() The FlowNode is the basic building block of the entire protocol.</description>
+    </item>
+    
+    <item>
+      <title>Pymetrix: An Overview</title>
+      <link>https://anuran-roy.github.io/post/projects/pymetrix/overview/</link>
+      <pubDate>Sat, 20 Nov 2021 01:03:40 +0530</pubDate>
+      
+      <guid>https://anuran-roy.github.io/post/projects/pymetrix/overview/</guid>
+      <description>Download as .zip Download as .tar.gz View on Github        How does Pymetrix work?  (A sample graph visualization)
+ Pymetrix basically tries to be an opensource plug-&amp;lsquo;n&amp;rsquo;-play python analytics library. It can be extended with various plugins that can be implemented in a manner I&amp;rsquo;ve tried to keep as straightforward as possible.
+Organization The Flow Graph: The backbone Being heavily inspired from Google Analytics, Pymetrix makes use of graphs to denote the entire flow of control, with each node denoting the function (or object) you want to get metrics of.</description>
+    </item>
+    
+    <item>
+      <title>Pymetrix: The Open Source Plug and Play Python Analytics Library</title>
+      <link>https://anuran-roy.github.io/post/projects/pymetrix/home/</link>
+      <pubDate>Sat, 20 Nov 2021 00:33:47 +0530</pubDate>
+      
+      <guid>https://anuran-roy.github.io/post/projects/pymetrix/home/</guid>
+      <description>Download as .zip Download as .tar.gz View on Github        Pymetrix-Python What is Pymetrix? Pymetrix is a plug-and-play analytics library written in Python.
+Usage Pymetrix is really easy to integrate with your projects. Here&amp;rsquo;s an example:
+Let&amp;rsquo;s say you want to monitor a method foo() defined as:
+from random import randint def foo(): print(f&amp;#34;Hello world {randint(0,1000000)}!&amp;#34;) After adding the required lines, the code will look something like this:</description>
+    </item>
+    
+    <item>
+      <title>Machine learning and the Pythonic buzz</title>
+      <link>https://anuran-roy.github.io/post/blog/machine-learning/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://anuran-roy.github.io/post/blog/machine-learning/</guid>
+      <description>&amp;ldquo;Predicting the future isn&amp;rsquo;t magic, it&amp;rsquo;s artificial intelligence&amp;rdquo; ~Dave Waters
+Yes, and machine learning is one of the most fascinating aspects of Artificial Intelligence.
+So what is machine learning? Machine learning leverages the power of statistical modelling to learn patterns in data that can be leveraged to predict outcomes from previously unseen data.
+Sounds too jargon-y? Let me break it up for you:
+Imagine a situation, where you are one of the decision makers in a business, and you want to increase the company profits for the next quarter, based on various products of your company.</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://anuran-roy.github.io/top/projects/</link>
+      <pubDate>Wed, 18 Aug 2021 02:20:07 +0530</pubDate>
+      
+      <guid>https://anuran-roy.github.io/top/projects/</guid>
+      <description>My Projects Hey there! I like to call myself as a creative workaholic, and love making novel stuff, which can be something out-of-the-box.
+My Github activity:
+ So without further banter, let me show you some of them:
+1. OpnEco Description &amp;ldquo;Ah, if only I could get someone to read this for feedback.&amp;rdquo; &amp;ldquo;Only if I could know which keywords to target&amp;hellip;&amp;rdquo;
+We all have been there, haven&amp;rsquo;t we?
+OpnEco is a Python3 project developed just for that.</description>
+    </item>
+    
+    <item>
+      <title>Other Blogs</title>
+      <link>https://anuran-roy.github.io/top/other-blogs/</link>
+      <pubDate>Mon, 26 Jul 2021 03:56:24 +0530</pubDate>
+      
+      <guid>https://anuran-roy.github.io/top/other-blogs/</guid>
+      <description>Technical Blogs Art of Problem Solving This is my oldest blog, which is quite inactive now. But to be honest, this was the first blog that I worked on seriously. So many good memories abound&amp;hellip;
+You can find a lot of math and CS content here. Even a series on ML simply explained. I use the pseudonym A-student there.
+My AoPS Blog
+Hashnode My Hashnode blog
+My College Club blogs 1.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://anuran-roy.github.io/top/about/</link>
+      <pubDate>Mon, 26 Jul 2021 03:45:58 +0530</pubDate>
+      
+      <guid>https://anuran-roy.github.io/top/about/</guid>
+      <description>Who am I? Roy. Anuran Roy. (I like James Bond.) I&amp;rsquo;m a machine that converts coffee to code.
+I am a sophocrat sophomore at VIT Vellore. Thanks to the CoVid pandemic and the lockdown it gave us for free, I am still at home, not waiting to go to college.
+In the meantime, I am trying to learn a few stuff (read Web Dev and Competitive Coding :P). This is one such (noobish) example of how much I have developed in web dev :P</description>
+    </item>
+    
+    <item>
+      <title>Offline Speech Recognition with Vosk</title>
+      <link>https://anuran-roy.github.io/post/blog/offline-speech-with-vosk/</link>
+      <pubDate>Sat, 24 Jul 2021 20:43:12 +0530</pubDate>
+      
+      <guid>https://anuran-roy.github.io/post/blog/offline-speech-with-vosk/</guid>
+      <description>No more Sphinx The long-lived and long-loved CMU Sphinx, a brainchild of Carnegie Mellon University, is not maintained actively anymore, since 5 years. But does that mean that we need to move to more production-oriented solutions? No, we actually don&amp;rsquo;t. The team CMU Sphinx Project has slowly rolled in a new child project - Vosk.
+Note that there are many other production-oriented solutions available (like OpenVINO, Mozilla DeepSpeech, etc.), which are equally as good, if not better at speech recognition.</description>
+    </item>
+    
+  </channel>
+</rss>

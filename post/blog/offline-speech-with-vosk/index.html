@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="A Tinkerer&#39;s Canvas">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://anuran-roy.github.io/images/header.jpeg">
+    <meta property="twitter:image" content="https://anuran-roy.github.io/images/header.jpeg" />
+    
+
+    
+    <meta name="title" content="Offline Speech Recognition with Vosk" />
+    <meta property="og:title" content="Offline Speech Recognition with Vosk" />
+    <meta property="twitter:title" content="Offline Speech Recognition with Vosk" />
+    
+
+    
+    <meta name="description" content="Offline Speech Recognition with Vosk">
+    <meta property="og:description" content="Offline Speech Recognition with Vosk" />
+    <meta property="twitter:description" content="Offline Speech Recognition with Vosk" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Tinker, Tinkerer, Anuran, Roy, Python, Python3, R, MATLAB, Data Science, Machine Learning, ML, Cryptography, Deep Learning, SEO, Blockchain, Django">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Offline Speech Recognition with Vosk-A Tinkerer&#39;s Canvas</title>
+
+    <link rel="canonical" href="/post/blog/offline-speech-with-vosk/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">A Tinkerer&#39;s Canvas</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/blog">blog</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/docs">docs</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+                        <li><a href="/top/projects/">My Projects</a></li>
+                    
+                        <li><a href="/top/other-blogs/">Other blogs</a></li>
+                    
+                        <li><a href="/documents/cv.pdf">My CV</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/images/vosk/vosk.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/python" title="python">
+                            python
+                        </a>
+                        
+                        <a class="tag" href="/tags/nlp" title="nlp">
+                            nlp
+                        </a>
+                        
+                        <a class="tag" href="/tags/vosk" title="vosk">
+                            vosk
+                        </a>
+                        
+                        <a class="tag" href="/tags/ai" title="ai">
+                            ai
+                        </a>
+                        
+                        <a class="tag" href="/tags/nltk" title="nltk">
+                            nltk
+                        </a>
+                        
+                    </div>
+                    <h1>Offline Speech Recognition with Vosk</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                            Anuran
+                         
+                        on 
+                        Saturday, July 24, 2021
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#no-more-sphinx">No more Sphinx</a></li>
+    <li><a href="#okay-i-dont-know-what-you-are-talking-about-please-explain-more">Okay, I don&rsquo;t know what you are talking about. Please explain more.</a>
+      <ul>
+        <li><a href="#i-get-it-but-why-do-you-call-this-dead">I get it, but why do you call this dead?</a></li>
+      </ul>
+    </li>
+    <li><a href="#okay-i-get-it-so-what-now">Okay I get it. So what now?</a></li>
+    <li><a href="#setting-up">Setting up:</a>
+      <ul>
+        <li><a href="#stage-0-resolving-system-level-dependencies">Stage 0: Resolving system-level dependencies:</a></li>
+        <li><a href="#stage-1-setting-up-vosk-api">Stage 1: Setting up Vosk-API</a></li>
+        <li><a href="#stage-2-setting-up-a-language-model">Stage 2: Setting up a language model</a></li>
+        <li><a href="#stage-3-setting-up-python-packages">Stage 3: Setting up Python Packages</a></li>
+        <li><a href="#stage-4-setting-up-nltk-packages">Stage 4: Setting up NLTK Packages</a></li>
+        <li><a href="#stage-5-programming-with-vosk-and-nltk">Stage 5: Programming with Vosk and NLTK.</a></li>
+        <li><a href="#explanation">Explanation:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <h2 id="no-more-sphinx">No more Sphinx</h2>
+<p>The long-lived and long-loved CMU Sphinx, a brainchild of Carnegie Mellon University, is not maintained actively anymore, since 5 years. But does that mean that we need to move to more production-oriented solutions? No, we actually don&rsquo;t. The team CMU Sphinx Project has slowly rolled in a new child project -  <a href="https://alphacephei.com/vosk"><strong>Vosk</strong></a>.</p>
+<p>Note that there are many other production-oriented solutions available (like OpenVINO, Mozilla DeepSpeech, etc.), which are equally as good, if not better at speech recognition. I am focusing on the ease of setup and use. 😅</p>
+<h2 id="okay-i-dont-know-what-you-are-talking-about-please-explain-more">Okay, I don&rsquo;t know what you are talking about. Please explain more.</h2>
+<p>Quoting the  <a href="https://cmusphinx.github.io/wiki/about/">Official CMU Sphinx wiki&rsquo;s About section</a>  (forgive me for being lazy):</p>
+<p>
+  <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1626621691957/5JfVUHJxE.png" alt="CMUSphinx Wiki About Section">
+
+</p>
+<h3 id="i-get-it-but-why-do-you-call-this-dead">I get it, but why do you call this dead?</h3>
+<p>This is the screenshot of the two most recent posts on the  <a href="https://cmusphinx.github.io/">CMU Sphinx Official Blog</a>:</p>
+<p>
+  <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1626466904859/9OZ2VX4IU.png" alt="CMUSphinx blog">
+
+</p>
+<p>Also this  <a href="https://news.ycombinator.com/item?id=13040523">discussion</a>  from YCombinator:</p>
+<p>
+  <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1626467333151/gAridT3-q.png" alt="YCombinator thread">
+
+</p>
+<p>Even if I disagree with the YCombinator discussion, the official CMU Sphinx blog does little to give me confidence.</p>
+<h2 id="okay-i-get-it-so-what-now">Okay I get it. So what now?</h2>
+<p>Another screenshot from the main <a href="https://cmusphinx.github.io/">CMU Sphinx website</a> :</p>
+<p>
+  <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1626467505926/MDDCitxMU.png" alt="CMUSphinx page head">
+
+</p>
+<p>Not gonna lie, I was pretty disappointed 🙁. I&rsquo;ve been a Sphinx user for quite sometime. I&rsquo;m no researcher, but I was actually familiar with Sphinx. So I wondered how Vosk would do for me. And I was really surprised at the gentle learning curve to implement Vosk to my apps. But there is really less documentation at the time of writing this blog. I hope this post will fill up some of that gap.</p>
+<p>Anyways, enough chatter. So in this post, I am going to show you how to setup a simple Python script to recognize your speech, using it alongside NLTK to identify your speech and extract the keywords. The end result? A fully functional system that takes your voice input and processes it reasonably accurately, so that you can add voice control features to any awesome projects you may be building! 😃</p>
+<h2 id="setting-up">Setting up:</h2>
+<h3 id="stage-0-resolving-system-level-dependencies">Stage 0: Resolving system-level dependencies:</h3>
+<blockquote>
+<p>&ldquo;Know thy tools.&rdquo; ~ Some great person.</p>
+</blockquote>
+<p>Okay so before I start, let&rsquo;s see with what we&rsquo;ll be working on:</p>
+<ol>
+<li>A Linux System (Ubuntu in my case). Windows and Mac users, don&rsquo;t be disheartened - the programming part is the same for all.</li>
+<li>PulseAudio Audio Drivers</li>
+<li>Python 3.8 with pip working.</li>
+<li>A working Internet connection</li>
+<li>An IDE (preferably) (VSCode in my case)</li>
+<li>A microphone (or a headphone or earphone with an attached microphone)</li>
+</ol>
+<p>So first, we need to install the appropriate <code>pulseaudio</code>, <code>alsa</code> and <code>jack</code> drivers, among others.</p>
+<p>Assuming you&rsquo;re running Debian (or Ubuntu), type the following commands:</p>
+<pre><code>sudo apt-get install gcc automake autoconf libtool bison swig python3-dev
+sudo apt-get install libpulse-dev jackd libasound2-dev
+</code></pre><p><strong>Note</strong>: Don&rsquo;t try to combine the above 2 statements (no pro-gamer move now 😜). <code>libasound2-dev</code> and <code>jackd</code> require <code>swig</code> to build their driver codes.</p>
+<p>If you&rsquo;re familiar with CMU Sphinx, you&rsquo;d realise that there are a lot of common dependencies - which is no coincidence. Vosk comes from Sphinx itself.</p>
+<p><em>If you face some issues with installing <code>swig</code>, don&rsquo;t worry. Just Google your error with the keyword CMU Sphinx.</em></p>
+<h3 id="stage-1-setting-up-vosk-api">Stage 1: Setting up Vosk-API</h3>
+<p>First, we need to download Vosk-API. The Vosk API needs less setup, compared to the original source code.</p>
+<p>Assuming you have git installed on your system, enter in your terminal:</p>
+<pre><code>git clone https://github.com/alphacep/vosk-api.git
+</code></pre><p>If you don&rsquo;t have git, or have some other issues with it,  <a href="https://github.com/alphacep/vosk-api">download Vosk-API from here</a>.</p>
+<ol>
+<li>
+<p>Create a project folder (say speech2command). Download (or clone) the Vosk-api code into a subfolder there.</p>
+</li>
+<li>
+<p>Now extract the .zip file (or .tar.gz file) into your project folder (if you downloaded the source code as an archive).</p>
+</li>
+</ol>
+<p>Your directory structure should look something like this:</p>
+<pre><code>speech2command
+     |_______ vosk-api
+     |_______ ...
+</code></pre><p>Now we&rsquo;re good to go.</p>
+<h3 id="stage-2-setting-up-a-language-model">Stage 2: Setting up a language model</h3>
+<p>The versatility of Vosk (or CMUSphinx) comes from its ability to use models to recognize various languages.</p>
+<p>Simply put, models are the parts of Vosk that are language-specific and supports speech in different languages. At the time of writing, Vosk has support for more than 18 languages including Greek, Turkish, Chinese, Indian English, etc.</p>
+<p><a href="https://alphacephei.com/vosk/models">The Vosk Model Wiki</a></p>
+<p>In this post, we are going to use the  <a href="http://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip">small American English model</a>. It&rsquo;s compact (around 40 Mb) and reasonably accurate.</p>
+<p>Download the model and extract it in your project folder. Rename the folder you extracted from the .zip file as <code>model</code>. Now, your directory structure should look like this:</p>
+<pre><code>speech2command
+     |_______ vosk-api
+     |_______ model
+     |_______ ...
+</code></pre><p>Here is a video walkthrough (albeit a bit old):</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Itic1lFc4Gg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<h3 id="stage-3-setting-up-python-packages">Stage 3: Setting up Python Packages</h3>
+<p>For our project, we need the following Python packages:</p>
+<ol>
+<li>platform</li>
+<li>Speech Recognition</li>
+<li>NLTK</li>
+<li>JSON</li>
+<li>sys</li>
+<li>Vosk</li>
+</ol>
+<p>The packages <code>platform</code>, <code>sys</code> and <code>json</code> come included in a standard Python 3 installation. We need to install the other packages manually.</p>
+<p>In the command line, type:</p>
+<pre><code>pip install nltk speech_recognition vosk
+</code></pre><p>Wait as the components get installed one by one.</p>
+<h3 id="stage-4-setting-up-nltk-packages">Stage 4: Setting up NLTK Packages</h3>
+<p>Now NLTK is a huge package, with a dedicated index to manage its components. We just downloaded the NLTK core components to get a basic program up and running. We need a few more NLTK components to add to continue with the code.</p>
+<p>The required packages are: <code>stopwords</code>, <code>averaged_perceptron_tagger</code>, <code>punkt</code>, and <code>wordnet</code>.</p>
+<pre><code>nltk.download(&quot;stopwords&quot;)
+nltk.download(&quot;averaged_perceptron_tagger&quot;)
+nltk.download(&quot;punkt&quot;)
+nltk.download(&quot;wordnet&quot;)
+</code></pre><p>Or in one line:</p>
+<pre><code>nltk.download(&quot;stopwords&quot;, &quot;averaged_perceptron_tagger&quot;, &quot;punkt&quot;, &quot;wordnet&quot;)
+</code></pre><h3 id="stage-5-programming-with-vosk-and-nltk">Stage 5: Programming with Vosk and NLTK.</h3>
+<p>Here comes the fun part! Let&rsquo;s code something in Python to identify speech and convert it to text, using Vosk-API as the backend.</p>
+<p>Make a new Python file (say <code>s2c.py</code>) in your project folder. Now the project folder directory structure should look like:</p>
+<pre><code>speech2command
+     |_______ vosk-api
+     |_______ model
+     |_______ s2c.py
+     |_______ ...
+</code></pre><h4 id="coding-time-now-">Coding time now! 🤩</h4>
+<p>Okay, so the code for the project is given below. The code is pretty clean (or so I hope), and you can understand the code yourself (or just copy-paste it 😜).</p>
+<pre><code>import platform
+import speech_recognition as sr
+import nltk
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import stopwords, wordnet
+import sys
+import vosk
+import json
+from vosk import SetLogLevel
+
+SetLogLevel(-1) # Hide Vosk logs
+
+p = platform.system()
+
+
+def listen():
+    rec = sr.Recognizer()
+    with sr.Microphone() as src:
+        rec.adjust_for_ambient_noise(src)
+        audio = rec.listen(src)
+    try:
+        cmd = rec.recognize_vosk(audio) # Connecting to Vosk API
+    except Exception:
+        print(&quot;Sorry, couldn't hear. Mind trying typing it?&quot;)
+        cmd = input()
+    return cmd
+
+
+def pos_tagger(tag):
+    if tag.startswith('J'):
+        return wordnet.ADJ
+    elif tag.startswith('V'):
+        return wordnet.VERB
+    elif tag.startswith('N'):
+        return wordnet.NOUN
+    elif tag.startswith('R'):
+        return wordnet.ADV
+    else:
+        return None
+
+
+def lemmatizer(src):
+    w = WordNetLemmatizer()
+    pos_tagged = nltk.pos_tag(nltk.word_tokenize(src))
+    wn_tagged = list(map(lambda x: (x[0], pos_tagger(x[1])), pos_tagged))
+    ls = []  # lemmatized sentence
+    for word, tag in wn_tagged:
+        if tag is None:
+            ls.append(word)
+        else:
+            ls.append(w.lemmatize(word, tag))
+    return ls
+
+
+def make_tokens(lms):
+    stop_words = set(stopwords.words('english')
+    src3 = []
+    for i in lms:
+        if i in stop_words:
+            pass
+        else:
+            src3.append(str(i)+&quot; &quot;)
+    print(&quot;Keywords are:&quot;, end=' ')
+    for i in src3:
+        print(i, end=' ')
+
+
+try:
+    while True:
+        print(&quot;\nSay some words: &quot;)
+        c = listen()
+        print(&quot;Listened value=&quot;,c)
+        d = json.loads(c)
+        print(&quot;Command =&quot;, d[&quot;text&quot;])
+        if str(d[&quot;text&quot;]).rstrip(&quot; &quot;) in ['stop', 'exit', 'bye', 'quit', 'terminate', 'kill', 'end']:
+            print(&quot;\n\nExit command triggered from command! Exiting...&quot;)
+            sys.exit()
+        lemmatized = lemmatizer(d[&quot;text&quot;])
+        make_tokens(lemmatized)
+except KeyboardInterrupt:
+    print(&quot;\n\nExit command triggered from Keyboard! Exiting...&quot;)
+</code></pre><p>Now run this code, and this will set up a listener that works continuously - with some verbose logs as well - which you can see on your terminal screen. Ignore those logs, they are just for information.</p>
+<h4 id="if-you-need-the-source-code-i-made-a-repo-for-it-vosk-demohttpsgithubcomanuran-royvosk-demo">If you need the source code, I made a repo for it: <a href="https://github.com/anuran-roy/vosk-demo">Vosk Demo</a></h4>
+<h3 id="explanation">Explanation:</h3>
+<p>Here is a flowchart that shows exactly how this works:</p>
+<p>
+  <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1626590492431/US0gqw6pN.png" alt="Project mechanism flowchart">
+
+</p>
+<p>So this was it, folks! Enjoy your very own speech2text (or rather, speech2command) recognition system. Keep tinkering!</p>
+<p>Bye for now!<br>
+<em><strong>Ron</strong></em></p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/post/blog/machine-learning/" data-toggle="tooltip" data-placement="top" title="Machine learning and the Pythonic buzz">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-anuran-roy-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/ai" title="ai">
+                            ai
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/analytics" title="analytics">
+                            analytics
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/beginner" title="beginner">
+                            beginner
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/foss" title="foss">
+                            foss
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/machine-learning" title="machine-learning">
+                            machine-learning
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/nlp" title="nlp">
+                            nlp
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/nltk" title="nltk">
+                            nltk
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/pymetrix" title="pymetrix">
+                            pymetrix
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/python" title="python">
+                            python
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/scikit-learn" title="scikit-learn">
+                            scikit-learn
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/vosk" title="vosk">
+                            vosk
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="A Tinkerer&#39;s Canvas" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:anuranroy02@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+                    
+                    <li>
+                        <a href="https://twitter.com/AnuranRoy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/anuran-roy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/anuran-roy/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; A Tinkerer&#39;s Canvas 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

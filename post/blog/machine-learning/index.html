@@ -1,0 +1,2133 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="A Tinkerer&#39;s Canvas">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://anuran-roy.github.io/images/header.jpeg">
+    <meta property="twitter:image" content="https://anuran-roy.github.io/images/header.jpeg" />
+    
+
+    
+    <meta name="title" content="Machine learning and the Pythonic buzz" />
+    <meta property="og:title" content="Machine learning and the Pythonic buzz" />
+    <meta property="twitter:title" content="Machine learning and the Pythonic buzz" />
+    
+
+    
+    <meta name="description" content="Machine learning leverages the power of statistical modelling to learn patterns in data that can be leveraged to predict outcomes from previously unseen data. Sounds too jargon-y? Let me break it up for you!">
+    <meta property="og:description" content="Machine learning leverages the power of statistical modelling to learn patterns in data that can be leveraged to predict outcomes from previously unseen data. Sounds too jargon-y? Let me break it up for you!" />
+    <meta property="twitter:description" content="Machine learning leverages the power of statistical modelling to learn patterns in data that can be leveraged to predict outcomes from previously unseen data. Sounds too jargon-y? Let me break it up for you!" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Tinker, Tinkerer, Anuran, Roy, Python, Python3, R, MATLAB, Data Science, Machine Learning, ML, Cryptography, Deep Learning, SEO, Blockchain, Django">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Machine learning and the Pythonic buzz-A Tinkerer&#39;s Canvas</title>
+
+    <link rel="canonical" href="/post/blog/machine-learning/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">A Tinkerer&#39;s Canvas</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/blog">blog</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/docs">docs</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+                        <li><a href="/top/projects/">My Projects</a></li>
+                    
+                        <li><a href="/top/other-blogs/">Other blogs</a></li>
+                    
+                        <li><a href="/documents/cv.pdf">My CV</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/images/ml-buzz/Illustration2.png')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/python" title="python">
+                            python
+                        </a>
+                        
+                        <a class="tag" href="/tags/machine-learning" title="machine learning">
+                            machine learning
+                        </a>
+                        
+                        <a class="tag" href="/tags/scikit-learn" title="scikit-learn">
+                            scikit-learn
+                        </a>
+                        
+                        <a class="tag" href="/tags/beginner" title="beginner">
+                            beginner
+                        </a>
+                        
+                    </div>
+                    <h1>Machine learning and the Pythonic buzz</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                            Anuran
+                         
+                        on 
+                        Sunday, August 29, 2021
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#so-what-is-machine-learning">So what is machine learning?</a></li>
+    <li><a href="#where-does-python-come-in-here">Where does Python come in here?</a></li>
+    <li><a href="#talk-is-cheap-show-me-the-code">Talk is cheap. Show me the code.</a>
+      <ul>
+        <li><a href="#step-0-install-python-and-the-dependencies-if-you-havent-already">Step 0: Install Python and the dependencies (if you haven&rsquo;t already)</a></li>
+        <li><a href="#step-1-import-the-tools">Step 1: Import the tools</a></li>
+        <li><a href="#step-2-import-the-data">Step 2: Import the data</a></li>
+        <li><a href="#step-3-initialize-the-model">Step 3: Initialize the model</a></li>
+        <li><a href="#step-4-fit-the-model-with-a-part-of-the-data-well-be-using-the-other-part-to-predict">Step 4: Fit the model with a part of the data (we&rsquo;ll be using the other part to predict</a></li>
+        <li><a href="#step-5-predict-using-the-data">Step 5: Predict using the data</a></li>
+        <li><a href="#step-6-test-the-model">Step 6: Test the model</a></li>
+        <li><a href="#bonus-visualizing-the-model">Bonus: Visualizing the model</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+                
+                <p><strong>&ldquo;Predicting the future isn&rsquo;t magic, it&rsquo;s artificial intelligence&rdquo;</strong> ~Dave Waters</p>
+<p>Yes, and <strong>machine learning</strong> is one of the most fascinating aspects of Artificial Intelligence.</p>
+<h2 id="so-what-is-machine-learning">So what is machine learning?</h2>
+<p>Machine learning leverages the power of statistical modelling to learn patterns in data that can be leveraged to predict outcomes from previously unseen data.</p>
+<p>Sounds too jargon-y? Let me break it up for you:</p>
+<p>Imagine a situation, where you are one of the decision makers in a business, and you want to increase the company profits for the next quarter, based on various products of your company.</p>
+<p>For a few products and observations, you might predict it manually - by seeing patterns in Data.</p>
+<p>If you&rsquo;re good at statistics, you may prefer to do the aforementioned predictions by working out some metrics to get a more rigorous proof, rather than working solely on your intuition. But we all know that manual can drive you only so far as one or two logs, right?</p>
+<p>This is where machine learning comes to your rescue. It automates all the steps that you&rsquo;ll do while working out the statistical metrics on a larger scale, scaling to hundreds, if not thousands of products, and millions of observations. The end result? Predictions that you can rely on (provided you provided the correct data).</p>
+<p>But this is only one aspect of machine learning. There are many more use cases of machine learning.</p>
+<h2 id="where-does-python-come-in-here">Where does Python come in here?</h2>
+<p>Okay, we can all agree on the fact that we all ABSOLUTELY LOVE Python (which is why you may have stumbled on this website in the first place :P)</p>
+<p>Jokes apart, Python is one of the easiest languages to prototype your ideas. And with its plethora of libraries and frameworks at our ready disposal, it makes our tasks even easier.</p>
+<p>Libraries like <strong>matplotlib</strong> , <strong>scikit-learn</strong> , <strong>numpy</strong> , <strong>pandas</strong> and <strong>scipy</strong> make data visualization, large-scale computation, data manipulation and machine learning accessible like never before. Couple them with interactive environments like <strong>Jupyter notebooks</strong> - you have probably the easiest way to carry out machine learning tasks - it&rsquo;s all upto your creativity now as to what you can do.</p>
+<p>In fact, there&rsquo;s even more you can do, but let&rsquo;s not go overboard :P</p>
+<h2 id="talk-is-cheap-show-me-the-code">Talk is cheap. Show me the code.</h2>
+<p>Okay, enough bantering. So what does a Python Implementation of a machine learning task look like?</p>
+<p>Let&rsquo;s use <strong>scikit-learn</strong> and the <a href="https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html#:~:text=The%20Boston%20Housing%20Dataset,the%20area%20of%20Boston%20Mass.&amp;text=It%20was%20obtained%20from%20the,the%20literature%20to%20benchmark%20algorithms.">Boston dataset</a> for this to predict house prices.</p>
+<p>This dataset consists of the following columns:</p>
+<p>
+  <img src="/images/ml-buzz/Screenshots/Picture0.png" alt="Dataset Columns">
+
+</p>
+<p>We have to predict either the NOX column, or the MEDV column, given the other columns.</p>
+<p>Consider yourself as a real-estate businessman and enjoy :).</p>
+<h3 id="step-0-install-python-and-the-dependencies-if-you-havent-already">Step 0: Install Python and the dependencies (if you haven&rsquo;t already)</h3>
+<p><strong>Installing Python:</strong></p>
+<ol>
+<li>
+<p>Download Python from the <a href="https://www.python.org/downloads/"><strong>official Python website</strong></a></p>
+</li>
+<li>
+<p>Install it, following the GUI instructions. If you&rsquo;re a Linux user, you&rsquo;ll probably have Python preinstalled in your system.</p>
+</li>
+</ol>
+<p><strong>Installing the dependencies</strong></p>
+<ol>
+<li>
+<p>Open the command prompt of your system. It&rsquo;s CMD (or Powershell) for Windows, Terminal for Mac and Linux.</p>
+</li>
+<li>
+<p>Type in the following command:</p>
+</li>
+</ol>
+<pre><code>pip install numpy scikit-learn
+</code></pre><p>Here is my output screen on my Linux machine:</p>
+<p>
+  <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1630235897871/A9DnllILC.png" alt="image.png">
+
+</p>
+<p>If you&rsquo;ve completed the above steps without encountering any error message, you&rsquo;re good to go 😃.</p>
+<h3 id="step-1-import-the-tools">Step 1: Import the tools</h3>
+<p>
+  <img src="/images/ml-buzz/Screenshots/Picture1.png" alt="">
+
+</p>
+<pre><code>&gt;&gt;&gt; from sklearn.tree import DecisionTreeRegressor as dtr
+</code></pre><p>We call scikit-learn as sklearn while importing it.</p>
+<p>We also import numpy, as the data will be in the format of numpy arrays.</p>
+<p>
+  <img src="/images/ml-buzz/Screenshots/Picture2.png" alt="">
+
+</p>
+<pre><code>&gt;&gt;&gt; import numpy as np
+</code></pre><h3 id="step-2-import-the-data">Step 2: Import the data</h3>
+<p>Fortunately, we can use a lot of built-in datasets inside <strong>scikit-learn</strong> itself. So let&rsquo;s import the Boston housing prices dataset.</p>
+<p>
+  <img src="/images/ml-buzz/Screenshots/Picture3.png" alt="">
+
+</p>
+<pre><code>&gt;&gt;&gt; from sklearn.datasets import load_boston
+&gt;&gt;&gt; data = load_boston()
+</code></pre><h3 id="step-3-initialize-the-model">Step 3: Initialize the model</h3>
+<p>
+  <img src="/images/ml-buzz/Screenshots/Picture7.png" alt="">
+
+</p>
+<pre><code>&gt;&gt;&gt; model = dtr()
+</code></pre><h3 id="step-4-fit-the-model-with-a-part-of-the-data-well-be-using-the-other-part-to-predict">Step 4: Fit the model with a part of the data (we&rsquo;ll be using the other part to predict</h3>
+<p>
+  <img src="/images/ml-buzz/Screenshots/Picture4.png" alt="">
+
+</p>
+<pre><code>&gt;&gt;&gt; model.fit(data.data[:400], data.target[:400])
+</code></pre><h3 id="step-5-predict-using-the-data">Step 5: Predict using the data</h3>
+<p>Let us consider the entries in the dataset from 400th index to test:</p>
+<p>
+  <img src="/images/ml-buzz/Screenshots/Picture5.png" alt="">
+
+</p>
+<pre><code>&gt;&gt;&gt; model.predict(data.data[400:])
+</code></pre><h3 id="step-6-test-the-model">Step 6: Test the model</h3>
+<p>Let&rsquo;s see how much the predictions match with the real values:</p>
+<p>
+  <img src="/images/ml-buzz/Screenshots/Picture6.png" alt="">
+
+</p>
+<pre><code>&gt;&gt;&gt; np.isclose(model.predict(data.data[400:]), data.target[400:], atol=5, equal_nan=True)
+</code></pre><p>As we can see, if we set the threshold of error in the predictions to around ±5 (ie., 5000 dollars), most predictions are correct. The ones that aren&rsquo;t, are the outliers in our data (which are very few, as you can see).</p>
+<h3 id="bonus-visualizing-the-model">Bonus: Visualizing the model</h3>
+<p>Since we have made a Decision Tree, we can visualize it. You can visualize the model using an awesome service called <a href="http://webgraphviz.com/"><strong>WebGraphViz</strong></a>!</p>
+<p>Paste the following code on the WebGraphViz webpage input:</p>
+<pre><code>digraph Tree {
+node [shape=box] ;
+0 [label=&quot;X[5] &lt;= 6.797\nmse = 83.807\nsamples = 400\nvalue = 24.335&quot;] ;
+1 [label=&quot;X[12] &lt;= 14.4\nmse = 34.521\nsamples = 314\nvalue = 20.982&quot;] ;
+0 -&gt; 1 [labeldistance=2.5, labelangle=45, headlabel=&quot;True&quot;] ;
+2 [label=&quot;X[7] &lt;= 1.434\nmse = 25.724\nsamples = 214\nvalue = 23.304&quot;] ;
+1 -&gt; 2 ;
+3 [label=&quot;mse = 0.0\nsamples = 4\nvalue = 50.0&quot;] ;
+2 -&gt; 3 ;
+4 [label=&quot;X[5] &lt;= 6.543\nmse = 12.38\nsamples = 210\nvalue = 22.795&quot;] ;
+2 -&gt; 4 ;
+5 [label=&quot;X[5] &lt;= 6.099\nmse = 8.087\nsamples = 172\nvalue = 21.851&quot;] ;
+4 -&gt; 5 ;
+6 [label=&quot;X[12] &lt;= 7.41\nmse = 5.734\nsamples = 78\nvalue = 20.487&quot;] ;
+5 -&gt; 6 ;
+7 [label=&quot;X[7] &lt;= 1.685\nmse = 5.114\nsamples = 5\nvalue = 23.66&quot;] ;
+6 -&gt; 7 ;
+8 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 27.5&quot;] ;
+7 -&gt; 8 ;
+9 [label=&quot;X[10] &lt;= 21.5\nmse = 1.785\nsamples = 4\nvalue = 22.7&quot;] ;
+7 -&gt; 9 ;
+10 [label=&quot;X[7] &lt;= 3.128\nmse = 0.42\nsamples = 3\nvalue = 23.4&quot;] ;
+9 -&gt; 10 ;
+11 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.3&quot;] ;
+10 -&gt; 11 ;
+12 [label=&quot;X[6] &lt;= 18.55\nmse = 0.022\nsamples = 2\nvalue = 22.95&quot;] ;
+10 -&gt; 12 ;
+13 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.8&quot;] ;
+12 -&gt; 13 ;
+14 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 23.1&quot;] ;
+12 -&gt; 14 ;
+15 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 20.6&quot;] ;
+9 -&gt; 15 ;
+16 [label=&quot;X[7] &lt;= 3.94\nmse = 5.04\nsamples = 73\nvalue = 20.27&quot;] ;
+6 -&gt; 16 ;
+17 [label=&quot;X[2] &lt;= 6.58\nmse = 6.234\nsamples = 29\nvalue = 21.145&quot;] ;
+16 -&gt; 17 ;
+18 [label=&quot;X[11] &lt;= 395.165\nmse = 4.675\nsamples = 10\nvalue = 22.79&quot;] ;
+17 -&gt; 18 ;
+19 [label=&quot;X[2] &lt;= 3.215\nmse = 3.048\nsamples = 8\nvalue = 23.5&quot;] ;
+18 -&gt; 19 ;
+20 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 26.4&quot;] ;
+19 -&gt; 20 ;
+21 [label=&quot;X[7] &lt;= 3.466\nmse = 2.11\nsamples = 7\nvalue = 23.086&quot;] ;
+19 -&gt; 21 ;
+22 [label=&quot;X[4] &lt;= 0.505\nmse = 1.627\nsamples = 3\nvalue = 21.8&quot;] ;
+21 -&gt; 22 ;
+23 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.0&quot;] ;
+22 -&gt; 23 ;
+24 [label=&quot;X[10] &lt;= 14.8\nmse = 0.01\nsamples = 2\nvalue = 22.7&quot;] ;
+22 -&gt; 24 ;
+25 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.8&quot;] ;
+24 -&gt; 25 ;
+26 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 22.6&quot;] ;
+24 -&gt; 26 ;
+27 [label=&quot;X[7] &lt;= 3.603\nmse = 0.302\nsamples = 4\nvalue = 24.05&quot;] ;
+21 -&gt; 27 ;
+28 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.2&quot;] ;
+27 -&gt; 28 ;
+29 [label=&quot;X[7] &lt;= 3.759\nmse = 0.082\nsamples = 3\nvalue = 24.333&quot;] ;
+27 -&gt; 29 ;
+30 [label=&quot;X[11] &lt;= 377.55\nmse = 0.023\nsamples = 2\nvalue = 24.15&quot;] ;
+29 -&gt; 30 ;
+31 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.0&quot;] ;
+30 -&gt; 31 ;
+32 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.3&quot;] ;
+30 -&gt; 32 ;
+33 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 24.7&quot;] ;
+29 -&gt; 33 ;
+34 [label=&quot;X[12] &lt;= 9.225\nmse = 1.102\nsamples = 2\nvalue = 19.95&quot;] ;
+18 -&gt; 34 ;
+35 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.0&quot;] ;
+34 -&gt; 35 ;
+36 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.9&quot;] ;
+34 -&gt; 36 ;
+37 [label=&quot;X[11] &lt;= 258.3\nmse = 4.88\nsamples = 19\nvalue = 20.279&quot;] ;
+17 -&gt; 37 ;
+38 [label=&quot;X[2] &lt;= 18.84\nmse = 0.122\nsamples = 2\nvalue = 23.45&quot;] ;
+37 -&gt; 38 ;
+39 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.1&quot;] ;
+38 -&gt; 39 ;
+40 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.8&quot;] ;
+38 -&gt; 40 ;
+41 [label=&quot;X[0] &lt;= 0.07\nmse = 4.117\nsamples = 17\nvalue = 19.906&quot;] ;
+37 -&gt; 41 ;
+42 [label=&quot;X[7] &lt;= 2.685\nmse = 0.423\nsamples = 2\nvalue = 22.65&quot;] ;
+41 -&gt; 42 ;
+43 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.0&quot;] ;
+42 -&gt; 43 ;
+44 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.3&quot;] ;
+42 -&gt; 44 ;
+45 [label=&quot;X[6] &lt;= 90.9\nmse = 3.472\nsamples = 15\nvalue = 19.54&quot;] ;
+41 -&gt; 45 ;
+46 [label=&quot;X[5] &lt;= 5.234\nmse = 3.064\nsamples = 10\nvalue = 18.9&quot;] ;
+45 -&gt; 46 ;
+47 [label=&quot;X[11] &lt;= 346.865\nmse = 0.16\nsamples = 2\nvalue = 15.7&quot;] ;
+46 -&gt; 47 ;
+48 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 15.3&quot;] ;
+47 -&gt; 48 ;
+49 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 16.1&quot;] ;
+47 -&gt; 49 ;
+50 [label=&quot;X[9] &lt;= 305.5\nmse = 0.59\nsamples = 8\nvalue = 19.7&quot;] ;
+46 -&gt; 50 ;
+51 [label=&quot;X[11] &lt;= 396.27\nmse = 0.227\nsamples = 4\nvalue = 20.175&quot;] ;
+50 -&gt; 51 ;
+52 [label=&quot;X[7] &lt;= 3.51\nmse = 0.036\nsamples = 3\nvalue = 20.433&quot;] ;
+51 -&gt; 52 ;
+53 [label=&quot;X[8] &lt;= 3.0\nmse = 0.0\nsamples = 2\nvalue = 20.3&quot;] ;
+52 -&gt; 53 ;
+54 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.3&quot;] ;
+53 -&gt; 54 ;
+55 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.3&quot;] ;
+53 -&gt; 55 ;
+56 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 20.7&quot;] ;
+52 -&gt; 56 ;
+57 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 19.4&quot;] ;
+51 -&gt; 57 ;
+58 [label=&quot;X[0] &lt;= 0.764\nmse = 0.502\nsamples = 4\nvalue = 19.225&quot;] ;
+50 -&gt; 58 ;
+59 [label=&quot;X[7] &lt;= 3.278\nmse = 0.247\nsamples = 3\nvalue = 18.9&quot;] ;
+58 -&gt; 59 ;
+60 [label=&quot;X[12] &lt;= 11.955\nmse = 0.002\nsamples = 2\nvalue = 19.25&quot;] ;
+59 -&gt; 60 ;
+61 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.2&quot;] ;
+60 -&gt; 61 ;
+62 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.3&quot;] ;
+60 -&gt; 62 ;
+63 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 18.2&quot;] ;
+59 -&gt; 63 ;
+64 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 20.2&quot;] ;
+58 -&gt; 64 ;
+65 [label=&quot;X[6] &lt;= 94.0\nmse = 1.83\nsamples = 5\nvalue = 20.82&quot;] ;
+45 -&gt; 65 ;
+66 [label=&quot;X[2] &lt;= 18.84\nmse = 0.16\nsamples = 2\nvalue = 22.3&quot;] ;
+65 -&gt; 66 ;
+67 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.9&quot;] ;
+66 -&gt; 67 ;
+68 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.7&quot;] ;
+66 -&gt; 68 ;
+69 [label=&quot;X[5] &lt;= 5.383\nmse = 0.509\nsamples = 3\nvalue = 19.833&quot;] ;
+65 -&gt; 69 ;
+70 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.8&quot;] ;
+69 -&gt; 70 ;
+71 [label=&quot;X[4] &lt;= 0.738\nmse = 0.062\nsamples = 2\nvalue = 19.35&quot;] ;
+69 -&gt; 71 ;
+72 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.1&quot;] ;
+71 -&gt; 72 ;
+73 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.6&quot;] ;
+71 -&gt; 73 ;
+74 [label=&quot;X[6] &lt;= 70.45\nmse = 3.417\nsamples = 44\nvalue = 19.693&quot;] ;
+16 -&gt; 74 ;
+75 [label=&quot;X[5] &lt;= 5.763\nmse = 2.619\nsamples = 37\nvalue = 20.081&quot;] ;
+74 -&gt; 75 ;
+76 [label=&quot;X[9] &lt;= 294.0\nmse = 0.658\nsamples = 5\nvalue = 18.14&quot;] ;
+75 -&gt; 76 ;
+77 [label=&quot;X[4] &lt;= 0.451\nmse = 0.09\nsamples = 2\nvalue = 19.0&quot;] ;
+76 -&gt; 77 ;
+78 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.3&quot;] ;
+77 -&gt; 78 ;
+79 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.7&quot;] ;
+77 -&gt; 79 ;
+80 [label=&quot;X[12] &lt;= 10.24\nmse = 0.216\nsamples = 3\nvalue = 17.567&quot;] ;
+76 -&gt; 80 ;
+81 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.2&quot;] ;
+80 -&gt; 81 ;
+82 [label=&quot;X[6] &lt;= 32.6\nmse = 0.022\nsamples = 2\nvalue = 17.25&quot;] ;
+80 -&gt; 82 ;
+83 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 17.1&quot;] ;
+82 -&gt; 83 ;
+84 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 17.4&quot;] ;
+82 -&gt; 84 ;
+85 [label=&quot;X[2] &lt;= 5.415\nmse = 2.245\nsamples = 32\nvalue = 20.384&quot;] ;
+75 -&gt; 85 ;
+86 [label=&quot;X[5] &lt;= 6.014\nmse = 1.809\nsamples = 15\nvalue = 19.5&quot;] ;
+85 -&gt; 86 ;
+87 [label=&quot;X[12] &lt;= 10.385\nmse = 0.946\nsamples = 11\nvalue = 18.927&quot;] ;
+86 -&gt; 87 ;
+88 [label=&quot;X[8] &lt;= 2.5\nmse = 0.449\nsamples = 8\nvalue = 19.375&quot;] ;
+87 -&gt; 88 ;
+89 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.9&quot;] ;
+88 -&gt; 89 ;
+90 [label=&quot;X[6] &lt;= 22.15\nmse = 0.134\nsamples = 7\nvalue = 19.157&quot;] ;
+88 -&gt; 90 ;
+91 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.6&quot;] ;
+90 -&gt; 91 ;
+92 [label=&quot;X[7] &lt;= 5.013\nmse = 0.096\nsamples = 6\nvalue = 19.25&quot;] ;
+90 -&gt; 92 ;
+93 [label=&quot;X[0] &lt;= 0.058\nmse = 0.022\nsamples = 2\nvalue = 18.85&quot;] ;
+92 -&gt; 93 ;
+94 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.0&quot;] ;
+93 -&gt; 94 ;
+95 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 18.7&quot;] ;
+93 -&gt; 95 ;
+96 [label=&quot;X[5] &lt;= 5.868\nmse = 0.013\nsamples = 4\nvalue = 19.45&quot;] ;
+92 -&gt; 96 ;
+97 [label=&quot;X[1] &lt;= 40.0\nmse = 0.002\nsamples = 2\nvalue = 19.35&quot;] ;
+96 -&gt; 97 ;
+98 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.3&quot;] ;
+97 -&gt; 98 ;
+99 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 19.4&quot;] ;
+97 -&gt; 99 ;
+100 [label=&quot;X[9] &lt;= 254.0\nmse = 0.002\nsamples = 2\nvalue = 19.55&quot;] ;
+96 -&gt; 100 ;
+101 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.5&quot;] ;
+100 -&gt; 101 ;
+102 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.6&quot;] ;
+100 -&gt; 102 ;
+103 [label=&quot;X[10] &lt;= 19.5\nmse = 0.309\nsamples = 3\nvalue = 17.733&quot;] ;
+87 -&gt; 103 ;
+104 [label=&quot;X[5] &lt;= 5.956\nmse = 0.022\nsamples = 2\nvalue = 17.35&quot;] ;
+103 -&gt; 104 ;
+105 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 17.2&quot;] ;
+104 -&gt; 105 ;
+106 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 17.5&quot;] ;
+104 -&gt; 106 ;
+107 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.5&quot;] ;
+103 -&gt; 107 ;
+108 [label=&quot;X[2] &lt;= 4.71\nmse = 0.802\nsamples = 4\nvalue = 21.075&quot;] ;
+86 -&gt; 108 ;
+109 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.5&quot;] ;
+108 -&gt; 109 ;
+110 [label=&quot;X[5] &lt;= 6.048\nmse = 0.167\nsamples = 3\nvalue = 20.6&quot;] ;
+108 -&gt; 110 ;
+111 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.1&quot;] ;
+110 -&gt; 111 ;
+112 [label=&quot;X[1] &lt;= 15.0\nmse = 0.062\nsamples = 2\nvalue = 20.35&quot;] ;
+110 -&gt; 112 ;
+113 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.6&quot;] ;
+112 -&gt; 113 ;
+114 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.1&quot;] ;
+112 -&gt; 114 ;
+115 [label=&quot;X[6] &lt;= 22.8\nmse = 1.331\nsamples = 17\nvalue = 21.165&quot;] ;
+85 -&gt; 115 ;
+116 [label=&quot;X[4] &lt;= 0.426\nmse = 0.422\nsamples = 4\nvalue = 22.425&quot;] ;
+115 -&gt; 116 ;
+117 [label=&quot;X[9] &lt;= 325.0\nmse = 0.022\nsamples = 2\nvalue = 21.85&quot;] ;
+116 -&gt; 117 ;
+118 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.7&quot;] ;
+117 -&gt; 118 ;
+119 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 22.0&quot;] ;
+117 -&gt; 119 ;
+120 [label=&quot;X[6] &lt;= 21.85\nmse = 0.16\nsamples = 2\nvalue = 23.0&quot;] ;
+116 -&gt; 120 ;
+121 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.4&quot;] ;
+120 -&gt; 121 ;
+122 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 22.6&quot;] ;
+120 -&gt; 122 ;
+123 [label=&quot;X[10] &lt;= 16.4\nmse = 0.971\nsamples = 13\nvalue = 20.777&quot;] ;
+115 -&gt; 123 ;
+124 [label=&quot;X[2] &lt;= 10.895\nmse = 0.36\nsamples = 2\nvalue = 22.3&quot;] ;
+123 -&gt; 124 ;
+125 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.9&quot;] ;
+124 -&gt; 125 ;
+126 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.7&quot;] ;
+124 -&gt; 126 ;
+127 [label=&quot;X[5] &lt;= 6.055\nmse = 0.584\nsamples = 11\nvalue = 20.5&quot;] ;
+123 -&gt; 127 ;
+128 [label=&quot;X[10] &lt;= 18.25\nmse = 0.267\nsamples = 9\nvalue = 20.233&quot;] ;
+127 -&gt; 128 ;
+129 [label=&quot;X[4] &lt;= 0.438\nmse = 0.06\nsamples = 3\nvalue = 19.7&quot;] ;
+128 -&gt; 129 ;
+130 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.4&quot;] ;
+129 -&gt; 130 ;
+131 [label=&quot;X[12] &lt;= 13.8\nmse = 0.023\nsamples = 2\nvalue = 19.85&quot;] ;
+129 -&gt; 131 ;
+132 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.7&quot;] ;
+131 -&gt; 132 ;
+133 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 20.0&quot;] ;
+131 -&gt; 133 ;
+134 [label=&quot;X[1] &lt;= 6.25\nmse = 0.157\nsamples = 6\nvalue = 20.5&quot;] ;
+128 -&gt; 134 ;
+135 [label=&quot;X[5] &lt;= 5.854\nmse = 0.043\nsamples = 4\nvalue = 20.25&quot;] ;
+134 -&gt; 135 ;
+136 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.9&quot;] ;
+135 -&gt; 136 ;
+137 [label=&quot;X[2] &lt;= 10.485\nmse = 0.002\nsamples = 3\nvalue = 20.367&quot;] ;
+135 -&gt; 137 ;
+138 [label=&quot;mse = 0.0\nsamples = 2\nvalue = 20.4&quot;] ;
+137 -&gt; 138 ;
+139 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.3&quot;] ;
+137 -&gt; 139 ;
+140 [label=&quot;X[6] &lt;= 37.55\nmse = 0.01\nsamples = 2\nvalue = 21.0&quot;] ;
+134 -&gt; 140 ;
+141 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.9&quot;] ;
+140 -&gt; 141 ;
+142 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.1&quot;] ;
+140 -&gt; 142 ;
+143 [label=&quot;X[7] &lt;= 5.568\nmse = 0.25\nsamples = 2\nvalue = 21.7&quot;] ;
+127 -&gt; 143 ;
+144 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.2&quot;] ;
+143 -&gt; 144 ;
+145 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.2&quot;] ;
+143 -&gt; 145 ;
+146 [label=&quot;X[0] &lt;= 1.103\nmse = 2.631\nsamples = 7\nvalue = 17.643&quot;] ;
+74 -&gt; 146 ;
+147 [label=&quot;X[5] &lt;= 5.707\nmse = 1.149\nsamples = 6\nvalue = 18.167&quot;] ;
+146 -&gt; 147 ;
+148 [label=&quot;X[7] &lt;= 5.95\nmse = 0.49\nsamples = 2\nvalue = 16.9&quot;] ;
+147 -&gt; 148 ;
+149 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 16.2&quot;] ;
+148 -&gt; 149 ;
+150 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 17.6&quot;] ;
+148 -&gt; 150 ;
+151 [label=&quot;X[0] &lt;= 0.745\nmse = 0.275\nsamples = 4\nvalue = 18.8&quot;] ;
+147 -&gt; 151 ;
+152 [label=&quot;X[11] &lt;= 394.015\nmse = 0.082\nsamples = 3\nvalue = 18.533&quot;] ;
+151 -&gt; 152 ;
+153 [label=&quot;X[9] &lt;= 297.0\nmse = 0.023\nsamples = 2\nvalue = 18.35&quot;] ;
+152 -&gt; 153 ;
+154 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.5&quot;] ;
+153 -&gt; 154 ;
+155 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 18.2&quot;] ;
+153 -&gt; 155 ;
+156 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 18.9&quot;] ;
+152 -&gt; 156 ;
+157 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.6&quot;] ;
+151 -&gt; 157 ;
+158 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 14.5&quot;] ;
+146 -&gt; 158 ;
+159 [label=&quot;X[9] &lt;= 222.5\nmse = 7.218\nsamples = 94\nvalue = 22.982&quot;] ;
+5 -&gt; 159 ;
+160 [label=&quot;X[0] &lt;= 0.065\nmse = 11.18\nsamples = 3\nvalue = 31.5&quot;] ;
+159 -&gt; 160 ;
+161 [label=&quot;X[6] &lt;= 63.75\nmse = 0.202\nsamples = 2\nvalue = 29.15&quot;] ;
+160 -&gt; 161 ;
+162 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 28.7&quot;] ;
+161 -&gt; 162 ;
+163 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 29.6&quot;] ;
+161 -&gt; 163 ;
+164 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 36.2&quot;] ;
+160 -&gt; 164 ;
+165 [label=&quot;X[12] &lt;= 9.98\nmse = 4.616\nsamples = 91\nvalue = 22.701&quot;] ;
+159 -&gt; 165 ;
+166 [label=&quot;X[5] &lt;= 6.539\nmse = 3.624\nsamples = 60\nvalue = 23.553&quot;] ;
+165 -&gt; 166 ;
+167 [label=&quot;X[2] &lt;= 5.75\nmse = 2.828\nsamples = 59\nvalue = 23.673&quot;] ;
+166 -&gt; 167 ;
+168 [label=&quot;X[5] &lt;= 6.145\nmse = 1.571\nsamples = 28\nvalue = 22.875&quot;] ;
+167 -&gt; 168 ;
+169 [label=&quot;X[12] &lt;= 8.765\nmse = 0.975\nsamples = 4\nvalue = 21.1&quot;] ;
+168 -&gt; 169 ;
+170 [label=&quot;X[10] &lt;= 17.45\nmse = 0.023\nsamples = 2\nvalue = 22.05&quot;] ;
+169 -&gt; 170 ;
+171 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.9&quot;] ;
+170 -&gt; 171 ;
+172 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.2&quot;] ;
+170 -&gt; 172 ;
+173 [label=&quot;X[0] &lt;= 0.044\nmse = 0.122\nsamples = 2\nvalue = 20.15&quot;] ;
+169 -&gt; 173 ;
+174 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.5&quot;] ;
+173 -&gt; 174 ;
+175 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.8&quot;] ;
+173 -&gt; 175 ;
+176 [label=&quot;X[9] &lt;= 233.5\nmse = 1.058\nsamples = 24\nvalue = 23.171&quot;] ;
+168 -&gt; 176 ;
+177 [label=&quot;X[11] &lt;= 389.555\nmse = 0.562\nsamples = 2\nvalue = 21.45&quot;] ;
+176 -&gt; 177 ;
+178 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.7&quot;] ;
+177 -&gt; 178 ;
+179 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.2&quot;] ;
+177 -&gt; 179 ;
+180 [label=&quot;X[12] &lt;= 6.725\nmse = 0.809\nsamples = 22\nvalue = 23.327&quot;] ;
+176 -&gt; 180 ;
+181 [label=&quot;X[9] &lt;= 324.0\nmse = 0.697\nsamples = 10\nvalue = 23.85&quot;] ;
+180 -&gt; 181 ;
+182 [label=&quot;X[8] &lt;= 5.5\nmse = 0.271\nsamples = 6\nvalue = 24.417&quot;] ;
+181 -&gt; 182 ;
+183 [label=&quot;X[9] &lt;= 262.0\nmse = 0.022\nsamples = 4\nvalue = 24.775&quot;] ;
+182 -&gt; 183 ;
+184 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 25.0&quot;] ;
+183 -&gt; 184 ;
+185 [label=&quot;X[6] &lt;= 33.95\nmse = 0.007\nsamples = 3\nvalue = 24.7&quot;] ;
+183 -&gt; 185 ;
+186 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.8&quot;] ;
+185 -&gt; 186 ;
+187 [label=&quot;X[11] &lt;= 396.25\nmse = 0.002\nsamples = 2\nvalue = 24.65&quot;] ;
+185 -&gt; 187 ;
+188 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.6&quot;] ;
+187 -&gt; 188 ;
+189 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.7&quot;] ;
+187 -&gt; 189 ;
+190 [label=&quot;mse = -0.0\nsamples = 2\nvalue = 23.7&quot;] ;
+182 -&gt; 190 ;
+191 [label=&quot;X[1] &lt;= 75.0\nmse = 0.13\nsamples = 4\nvalue = 23.0&quot;] ;
+181 -&gt; 191 ;
+192 [label=&quot;X[2] &lt;= 1.745\nmse = 0.04\nsamples = 2\nvalue = 22.7&quot;] ;
+191 -&gt; 192 ;
+193 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.9&quot;] ;
+192 -&gt; 193 ;
+194 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 22.5&quot;] ;
+192 -&gt; 194 ;
+195 [label=&quot;X[11] &lt;= 394.665\nmse = 0.04\nsamples = 2\nvalue = 23.3&quot;] ;
+191 -&gt; 195 ;
+196 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.1&quot;] ;
+195 -&gt; 196 ;
+197 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.5&quot;] ;
+195 -&gt; 197 ;
+198 [label=&quot;X[12] &lt;= 8.925\nmse = 0.486\nsamples = 12\nvalue = 22.892&quot;] ;
+180 -&gt; 198 ;
+199 [label=&quot;X[5] &lt;= 6.262\nmse = 0.402\nsamples = 10\nvalue = 22.72&quot;] ;
+198 -&gt; 199 ;
+200 [label=&quot;X[10] &lt;= 15.65\nmse = 0.197\nsamples = 4\nvalue = 23.375&quot;] ;
+199 -&gt; 200 ;
+201 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.1&quot;] ;
+200 -&gt; 201 ;
+202 [label=&quot;X[9] &lt;= 282.5\nmse = 0.029\nsamples = 3\nvalue = 23.133&quot;] ;
+200 -&gt; 202 ;
+203 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.9&quot;] ;
+202 -&gt; 203 ;
+204 [label=&quot;X[7] &lt;= 7.566\nmse = 0.002\nsamples = 2\nvalue = 23.25&quot;] ;
+202 -&gt; 204 ;
+205 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.2&quot;] ;
+204 -&gt; 205 ;
+206 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.3&quot;] ;
+204 -&gt; 206 ;
+207 [label=&quot;X[11] &lt;= 392.865\nmse = 0.061\nsamples = 6\nvalue = 22.283&quot;] ;
+199 -&gt; 207 ;
+208 [label=&quot;mse = 0.0\nsamples = 2\nvalue = 22.6&quot;] ;
+207 -&gt; 208 ;
+209 [label=&quot;X[0] &lt;= 0.043\nmse = 0.017\nsamples = 4\nvalue = 22.125&quot;] ;
+207 -&gt; 209 ;
+210 [label=&quot;mse = 0.0\nsamples = 2\nvalue = 22.0&quot;] ;
+209 -&gt; 210 ;
+211 [label=&quot;X[4] &lt;= 0.429\nmse = 0.002\nsamples = 2\nvalue = 22.25&quot;] ;
+209 -&gt; 211 ;
+212 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.3&quot;] ;
+211 -&gt; 212 ;
+213 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.2&quot;] ;
+211 -&gt; 213 ;
+214 [label=&quot;X[6] &lt;= 66.05\nmse = 0.023\nsamples = 2\nvalue = 23.75&quot;] ;
+198 -&gt; 214 ;
+215 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.9&quot;] ;
+214 -&gt; 215 ;
+216 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.6&quot;] ;
+214 -&gt; 216 ;
+217 [label=&quot;X[1] &lt;= 31.0\nmse = 2.868\nsamples = 31\nvalue = 24.394&quot;] ;
+167 -&gt; 217 ;
+218 [label=&quot;X[12] &lt;= 9.27\nmse = 2.11\nsamples = 29\nvalue = 24.162&quot;] ;
+217 -&gt; 218 ;
+219 [label=&quot;X[12] &lt;= 7.845\nmse = 1.71\nsamples = 25\nvalue = 23.924&quot;] ;
+218 -&gt; 219 ;
+220 [label=&quot;X[11] &lt;= 351.615\nmse = 1.113\nsamples = 19\nvalue = 24.337&quot;] ;
+219 -&gt; 220 ;
+221 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 27.0&quot;] ;
+220 -&gt; 221 ;
+222 [label=&quot;X[5] &lt;= 6.146\nmse = 0.759\nsamples = 18\nvalue = 24.189&quot;] ;
+220 -&gt; 222 ;
+223 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.1&quot;] ;
+222 -&gt; 223 ;
+224 [label=&quot;X[5] &lt;= 6.242\nmse = 0.532\nsamples = 17\nvalue = 24.312&quot;] ;
+222 -&gt; 224 ;
+225 [label=&quot;X[12] &lt;= 7.015\nmse = 0.052\nsamples = 4\nvalue = 25.05&quot;] ;
+224 -&gt; 225 ;
+226 [label=&quot;X[0] &lt;= 0.085\nmse = 0.016\nsamples = 3\nvalue = 25.167&quot;] ;
+225 -&gt; 226 ;
+227 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 25.0&quot;] ;
+226 -&gt; 227 ;
+228 [label=&quot;X[6] &lt;= 11.45\nmse = 0.003\nsamples = 2\nvalue = 25.25&quot;] ;
+226 -&gt; 228 ;
+229 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 25.3&quot;] ;
+228 -&gt; 229 ;
+230 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 25.2&quot;] ;
+228 -&gt; 230 ;
+231 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 24.7&quot;] ;
+225 -&gt; 231 ;
+232 [label=&quot;X[5] &lt;= 6.387\nmse = 0.46\nsamples = 13\nvalue = 24.085&quot;] ;
+224 -&gt; 232 ;
+233 [label=&quot;X[0] &lt;= 0.13\nmse = 0.185\nsamples = 4\nvalue = 23.4&quot;] ;
+232 -&gt; 233 ;
+234 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.1&quot;] ;
+233 -&gt; 234 ;
+235 [label=&quot;X[11] &lt;= 387.035\nmse = 0.029\nsamples = 3\nvalue = 23.167&quot;] ;
+233 -&gt; 235 ;
+236 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.4&quot;] ;
+235 -&gt; 236 ;
+237 [label=&quot;X[7] &lt;= 4.978\nmse = 0.003\nsamples = 2\nvalue = 23.05&quot;] ;
+235 -&gt; 237 ;
+238 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.1&quot;] ;
+237 -&gt; 238 ;
+239 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.0&quot;] ;
+237 -&gt; 239 ;
+240 [label=&quot;X[6] &lt;= 94.0\nmse = 0.281\nsamples = 9\nvalue = 24.389&quot;] ;
+232 -&gt; 240 ;
+241 [label=&quot;X[0] &lt;= 0.18\nmse = 0.149\nsamples = 8\nvalue = 24.525&quot;] ;
+240 -&gt; 241 ;
+242 [label=&quot;X[11] &lt;= 396.59\nmse = 0.06\nsamples = 4\nvalue = 24.2&quot;] ;
+241 -&gt; 242 ;
+243 [label=&quot;X[2] &lt;= 8.885\nmse = 0.009\nsamples = 3\nvalue = 24.333&quot;] ;
+242 -&gt; 243 ;
+244 [label=&quot;mse = 0.0\nsamples = 2\nvalue = 24.4&quot;] ;
+243 -&gt; 244 ;
+245 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 24.2&quot;] ;
+243 -&gt; 245 ;
+246 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.8&quot;] ;
+242 -&gt; 246 ;
+247 [label=&quot;X[7] &lt;= 5.069\nmse = 0.027\nsamples = 4\nvalue = 24.85&quot;] ;
+241 -&gt; 247 ;
+248 [label=&quot;mse = 0.0\nsamples = 2\nvalue = 25.0&quot;] ;
+247 -&gt; 248 ;
+249 [label=&quot;X[0] &lt;= 0.203\nmse = 0.01\nsamples = 2\nvalue = 24.7&quot;] ;
+247 -&gt; 249 ;
+250 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.6&quot;] ;
+249 -&gt; 250 ;
+251 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.8&quot;] ;
+249 -&gt; 251 ;
+252 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 23.3&quot;] ;
+240 -&gt; 252 ;
+253 [label=&quot;X[5] &lt;= 6.196\nmse = 1.351\nsamples = 6\nvalue = 22.617&quot;] ;
+219 -&gt; 253 ;
+254 [label=&quot;X[8] &lt;= 5.5\nmse = 0.04\nsamples = 2\nvalue = 24.1&quot;] ;
+253 -&gt; 254 ;
+255 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.9&quot;] ;
+254 -&gt; 255 ;
+256 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 24.3&quot;] ;
+254 -&gt; 256 ;
+257 [label=&quot;X[5] &lt;= 6.431\nmse = 0.357\nsamples = 4\nvalue = 21.875&quot;] ;
+253 -&gt; 257 ;
+258 [label=&quot;X[4] &lt;= 0.453\nmse = 0.009\nsamples = 3\nvalue = 21.533&quot;] ;
+257 -&gt; 258 ;
+259 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.4&quot;] ;
+258 -&gt; 259 ;
+260 [label=&quot;X[12] &lt;= 8.52\nmse = 0.0\nsamples = 2\nvalue = 21.6&quot;] ;
+258 -&gt; 260 ;
+261 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.6&quot;] ;
+260 -&gt; 261 ;
+262 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.6&quot;] ;
+260 -&gt; 262 ;
+263 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 22.9&quot;] ;
+257 -&gt; 263 ;
+264 [label=&quot;X[0] &lt;= 0.152\nmse = 2.042\nsamples = 4\nvalue = 25.65&quot;] ;
+218 -&gt; 264 ;
+265 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 28.1&quot;] ;
+264 -&gt; 265 ;
+266 [label=&quot;X[1] &lt;= 11.0\nmse = 0.056\nsamples = 3\nvalue = 24.833&quot;] ;
+264 -&gt; 266 ;
+267 [label=&quot;mse = 0.0\nsamples = 2\nvalue = 25.0&quot;] ;
+266 -&gt; 267 ;
+268 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.5&quot;] ;
+266 -&gt; 268 ;
+269 [label=&quot;X[10] &lt;= 16.85\nmse = 1.823\nsamples = 2\nvalue = 27.75&quot;] ;
+217 -&gt; 269 ;
+270 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 26.4&quot;] ;
+269 -&gt; 270 ;
+271 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 29.1&quot;] ;
+269 -&gt; 271 ;
+272 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 16.5&quot;] ;
+166 -&gt; 272 ;
+273 [label=&quot;X[5] &lt;= 6.404\nmse = 2.41\nsamples = 31\nvalue = 21.052&quot;] ;
+165 -&gt; 273 ;
+274 [label=&quot;X[5] &lt;= 6.299\nmse = 2.007\nsamples = 27\nvalue = 21.356&quot;] ;
+273 -&gt; 274 ;
+275 [label=&quot;X[0] &lt;= 4.049\nmse = 1.06\nsamples = 18\nvalue = 20.75&quot;] ;
+274 -&gt; 275 ;
+276 [label=&quot;X[5] &lt;= 6.25\nmse = 0.685\nsamples = 16\nvalue = 20.513&quot;] ;
+275 -&gt; 276 ;
+277 [label=&quot;X[10] &lt;= 18.1\nmse = 0.424\nsamples = 13\nvalue = 20.754&quot;] ;
+276 -&gt; 277 ;
+278 [label=&quot;X[9] &lt;= 417.5\nmse = 0.016\nsamples = 3\nvalue = 21.367&quot;] ;
+277 -&gt; 278 ;
+279 [label=&quot;X[0] &lt;= 0.886\nmse = 0.003\nsamples = 2\nvalue = 21.45&quot;] ;
+278 -&gt; 279 ;
+280 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.4&quot;] ;
+279 -&gt; 280 ;
+281 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.5&quot;] ;
+279 -&gt; 281 ;
+282 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.2&quot;] ;
+278 -&gt; 282 ;
+283 [label=&quot;X[6] &lt;= 86.3\nmse = 0.4\nsamples = 10\nvalue = 20.57&quot;] ;
+277 -&gt; 283 ;
+284 [label=&quot;X[1] &lt;= 11.0\nmse = 0.224\nsamples = 8\nvalue = 20.788&quot;] ;
+283 -&gt; 284 ;
+285 [label=&quot;X[5] &lt;= 6.168\nmse = 0.186\nsamples = 5\nvalue = 21.02&quot;] ;
+284 -&gt; 285 ;
+286 [label=&quot;X[10] &lt;= 19.8\nmse = 0.062\nsamples = 3\nvalue = 20.733&quot;] ;
+285 -&gt; 286 ;
+287 [label=&quot;X[5] &lt;= 6.126\nmse = 0.01\nsamples = 2\nvalue = 20.9&quot;] ;
+286 -&gt; 287 ;
+288 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.0&quot;] ;
+287 -&gt; 288 ;
+289 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.8&quot;] ;
+287 -&gt; 289 ;
+290 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.4&quot;] ;
+286 -&gt; 290 ;
+291 [label=&quot;X[5] &lt;= 6.214\nmse = 0.062\nsamples = 2\nvalue = 21.45&quot;] ;
+285 -&gt; 291 ;
+292 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.7&quot;] ;
+291 -&gt; 292 ;
+293 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 21.2&quot;] ;
+291 -&gt; 293 ;
+294 [label=&quot;X[7] &lt;= 8.572\nmse = 0.047\nsamples = 3\nvalue = 20.4&quot;] ;
+284 -&gt; 294 ;
+295 [label=&quot;X[4] &lt;= 0.447\nmse = 0.003\nsamples = 2\nvalue = 20.55&quot;] ;
+294 -&gt; 295 ;
+296 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.5&quot;] ;
+295 -&gt; 296 ;
+297 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.6&quot;] ;
+295 -&gt; 297 ;
+298 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 20.1&quot;] ;
+294 -&gt; 298 ;
+299 [label=&quot;X[0] &lt;= 0.176\nmse = 0.16\nsamples = 2\nvalue = 19.7&quot;] ;
+283 -&gt; 299 ;
+300 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.1&quot;] ;
+299 -&gt; 300 ;
+301 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 19.3&quot;] ;
+299 -&gt; 301 ;
+302 [label=&quot;X[10] &lt;= 18.25\nmse = 0.469\nsamples = 3\nvalue = 19.467&quot;] ;
+276 -&gt; 302 ;
+303 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.5&quot;] ;
+302 -&gt; 303 ;
+304 [label=&quot;X[7] &lt;= 3.174\nmse = 0.002\nsamples = 2\nvalue = 19.95&quot;] ;
+302 -&gt; 304 ;
+305 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.9&quot;] ;
+304 -&gt; 305 ;
+306 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.0&quot;] ;
+304 -&gt; 306 ;
+307 [label=&quot;X[7] &lt;= 2.616\nmse = 0.002\nsamples = 2\nvalue = 22.65&quot;] ;
+275 -&gt; 307 ;
+308 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.6&quot;] ;
+307 -&gt; 308 ;
+309 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.7&quot;] ;
+307 -&gt; 309 ;
+310 [label=&quot;X[11] &lt;= 396.055\nmse = 1.7\nsamples = 9\nvalue = 22.567&quot;] ;
+274 -&gt; 310 ;
+311 [label=&quot;X[12] &lt;= 11.17\nmse = 0.675\nsamples = 8\nvalue = 22.938&quot;] ;
+310 -&gt; 311 ;
+312 [label=&quot;X[5] &lt;= 6.349\nmse = 0.31\nsamples = 5\nvalue = 23.46&quot;] ;
+311 -&gt; 312 ;
+313 [label=&quot;X[2] &lt;= 15.085\nmse = 0.09\nsamples = 2\nvalue = 24.1&quot;] ;
+312 -&gt; 313 ;
+314 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.4&quot;] ;
+313 -&gt; 314 ;
+315 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 23.8&quot;] ;
+313 -&gt; 315 ;
+316 [label=&quot;X[12] &lt;= 10.43\nmse = 0.002\nsamples = 3\nvalue = 23.033&quot;] ;
+312 -&gt; 316 ;
+317 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.1&quot;] ;
+316 -&gt; 317 ;
+318 [label=&quot;X[9] &lt;= 356.5\nmse = 0.0\nsamples = 2\nvalue = 23.0&quot;] ;
+316 -&gt; 318 ;
+319 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.0&quot;] ;
+318 -&gt; 319 ;
+320 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.0&quot;] ;
+318 -&gt; 320 ;
+321 [label=&quot;X[11] &lt;= 382.045\nmse = 0.069\nsamples = 3\nvalue = 22.067&quot;] ;
+311 -&gt; 321 ;
+322 [label=&quot;X[2] &lt;= 12.255\nmse = 0.002\nsamples = 2\nvalue = 22.25&quot;] ;
+321 -&gt; 322 ;
+323 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.2&quot;] ;
+322 -&gt; 323 ;
+324 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.3&quot;] ;
+322 -&gt; 324 ;
+325 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 21.7&quot;] ;
+321 -&gt; 325 ;
+326 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.6&quot;] ;
+310 -&gt; 326 ;
+327 [label=&quot;X[11] &lt;= 391.49\nmse = 0.3\nsamples = 4\nvalue = 19.0&quot;] ;
+273 -&gt; 327 ;
+328 [label=&quot;X[4] &lt;= 0.529\nmse = 0.01\nsamples = 2\nvalue = 18.5&quot;] ;
+327 -&gt; 328 ;
+329 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.6&quot;] ;
+328 -&gt; 329 ;
+330 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.4&quot;] ;
+328 -&gt; 330 ;
+331 [label=&quot;X[6] &lt;= 98.0\nmse = 0.09\nsamples = 2\nvalue = 19.5&quot;] ;
+327 -&gt; 331 ;
+332 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.8&quot;] ;
+331 -&gt; 332 ;
+333 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.2&quot;] ;
+331 -&gt; 333 ;
+334 [label=&quot;X[12] &lt;= 6.93\nmse = 9.489\nsamples = 38\nvalue = 27.071&quot;] ;
+4 -&gt; 334 ;
+335 [label=&quot;X[4] &lt;= 0.524\nmse = 8.003\nsamples = 21\nvalue = 28.371&quot;] ;
+334 -&gt; 335 ;
+336 [label=&quot;X[2] &lt;= 2.015\nmse = 5.932\nsamples = 19\nvalue = 28.895&quot;] ;
+335 -&gt; 336 ;
+337 [label=&quot;X[4] &lt;= 0.423\nmse = 0.04\nsamples = 2\nvalue = 24.3&quot;] ;
+336 -&gt; 337 ;
+338 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.1&quot;] ;
+337 -&gt; 338 ;
+339 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 24.5&quot;] ;
+337 -&gt; 339 ;
+340 [label=&quot;X[10] &lt;= 17.85\nmse = 3.849\nsamples = 17\nvalue = 29.435&quot;] ;
+336 -&gt; 340 ;
+341 [label=&quot;X[10] &lt;= 17.2\nmse = 1.821\nsamples = 10\nvalue = 30.59&quot;] ;
+340 -&gt; 341 ;
+342 [label=&quot;X[6] &lt;= 38.6\nmse = 1.056\nsamples = 7\nvalue = 29.929&quot;] ;
+341 -&gt; 342 ;
+343 [label=&quot;X[8] &lt;= 4.5\nmse = 0.398\nsamples = 6\nvalue = 29.583&quot;] ;
+342 -&gt; 343 ;
+344 [label=&quot;X[9] &lt;= 277.0\nmse = 0.062\nsamples = 2\nvalue = 28.85&quot;] ;
+343 -&gt; 344 ;
+345 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 29.1&quot;] ;
+344 -&gt; 345 ;
+346 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 28.6&quot;] ;
+344 -&gt; 346 ;
+347 [label=&quot;X[7] &lt;= 5.523\nmse = 0.162\nsamples = 4\nvalue = 29.95&quot;] ;
+343 -&gt; 347 ;
+348 [label=&quot;X[1] &lt;= 22.5\nmse = 0.04\nsamples = 2\nvalue = 29.6&quot;] ;
+347 -&gt; 348 ;
+349 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 29.4&quot;] ;
+348 -&gt; 349 ;
+350 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 29.8&quot;] ;
+348 -&gt; 350 ;
+351 [label=&quot;X[2] &lt;= 2.73\nmse = 0.04\nsamples = 2\nvalue = 30.3&quot;] ;
+347 -&gt; 351 ;
+352 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 30.1&quot;] ;
+351 -&gt; 352 ;
+353 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 30.5&quot;] ;
+351 -&gt; 353 ;
+354 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 32.0&quot;] ;
+342 -&gt; 354 ;
+355 [label=&quot;X[9] &lt;= 280.5\nmse = 0.202\nsamples = 3\nvalue = 32.133&quot;] ;
+341 -&gt; 355 ;
+356 [label=&quot;X[2] &lt;= 4.435\nmse = 0.002\nsamples = 2\nvalue = 32.45&quot;] ;
+355 -&gt; 356 ;
+357 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 32.5&quot;] ;
+356 -&gt; 357 ;
+358 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 32.4&quot;] ;
+356 -&gt; 358 ;
+359 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 31.5&quot;] ;
+355 -&gt; 359 ;
+360 [label=&quot;X[0] &lt;= 0.032\nmse = 2.121\nsamples = 7\nvalue = 27.786&quot;] ;
+340 -&gt; 360 ;
+361 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 30.8&quot;] ;
+360 -&gt; 361 ;
+362 [label=&quot;X[2] &lt;= 5.405\nmse = 0.708\nsamples = 6\nvalue = 27.283&quot;] ;
+360 -&gt; 362 ;
+363 [label=&quot;X[4] &lt;= 0.447\nmse = 0.457\nsamples = 4\nvalue = 27.725&quot;] ;
+362 -&gt; 363 ;
+364 [label=&quot;X[6] &lt;= 45.65\nmse = 0.047\nsamples = 3\nvalue = 28.1&quot;] ;
+363 -&gt; 364 ;
+365 [label=&quot;X[0] &lt;= 0.039\nmse = 0.002\nsamples = 2\nvalue = 27.95&quot;] ;
+364 -&gt; 365 ;
+366 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 27.9&quot;] ;
+365 -&gt; 366 ;
+367 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 28.0&quot;] ;
+365 -&gt; 367 ;
+368 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 28.4&quot;] ;
+364 -&gt; 368 ;
+369 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 26.6&quot;] ;
+363 -&gt; 369 ;
+370 [label=&quot;X[6] &lt;= 10.2\nmse = 0.04\nsamples = 2\nvalue = 26.4&quot;] ;
+362 -&gt; 370 ;
+371 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 26.6&quot;] ;
+370 -&gt; 371 ;
+372 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 26.2&quot;] ;
+370 -&gt; 372 ;
+373 [label=&quot;X[1] &lt;= 9.0\nmse = 0.36\nsamples = 2\nvalue = 23.4&quot;] ;
+335 -&gt; 373 ;
+374 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.8&quot;] ;
+373 -&gt; 374 ;
+375 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.0&quot;] ;
+373 -&gt; 375 ;
+376 [label=&quot;X[7] &lt;= 3.9\nmse = 6.655\nsamples = 17\nvalue = 25.465&quot;] ;
+334 -&gt; 376 ;
+377 [label=&quot;X[10] &lt;= 17.6\nmse = 5.845\nsamples = 8\nvalue = 27.1&quot;] ;
+376 -&gt; 377 ;
+378 [label=&quot;X[12] &lt;= 7.825\nmse = 0.362\nsamples = 3\nvalue = 29.267&quot;] ;
+377 -&gt; 378 ;
+379 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 30.1&quot;] ;
+378 -&gt; 379 ;
+380 [label=&quot;X[11] &lt;= 376.49\nmse = 0.022\nsamples = 2\nvalue = 28.85&quot;] ;
+378 -&gt; 380 ;
+381 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 29.0&quot;] ;
+380 -&gt; 381 ;
+382 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 28.7&quot;] ;
+380 -&gt; 382 ;
+383 [label=&quot;X[6] &lt;= 80.75\nmse = 4.628\nsamples = 5\nvalue = 25.8&quot;] ;
+377 -&gt; 383 ;
+384 [label=&quot;X[12] &lt;= 8.3\nmse = 0.602\nsamples = 3\nvalue = 27.467&quot;] ;
+383 -&gt; 384 ;
+385 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 26.5&quot;] ;
+384 -&gt; 385 ;
+386 [label=&quot;X[8] &lt;= 6.0\nmse = 0.202\nsamples = 2\nvalue = 27.95&quot;] ;
+384 -&gt; 386 ;
+387 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 27.5&quot;] ;
+386 -&gt; 387 ;
+388 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 28.4&quot;] ;
+386 -&gt; 388 ;
+389 [label=&quot;X[9] &lt;= 368.0\nmse = 0.25\nsamples = 2\nvalue = 23.3&quot;] ;
+383 -&gt; 389 ;
+390 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.8&quot;] ;
+389 -&gt; 390 ;
+391 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.8&quot;] ;
+389 -&gt; 391 ;
+392 [label=&quot;X[2] &lt;= 11.03\nmse = 2.885\nsamples = 9\nvalue = 24.011&quot;] ;
+376 -&gt; 392 ;
+393 [label=&quot;X[12] &lt;= 10.76\nmse = 1.904\nsamples = 8\nvalue = 23.625&quot;] ;
+392 -&gt; 393 ;
+394 [label=&quot;X[10] &lt;= 16.35\nmse = 1.051\nsamples = 7\nvalue = 24.0&quot;] ;
+393 -&gt; 394 ;
+395 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.0&quot;] ;
+394 -&gt; 395 ;
+396 [label=&quot;X[2] &lt;= 5.03\nmse = 0.449\nsamples = 6\nvalue = 24.333&quot;] ;
+394 -&gt; 396 ;
+397 [label=&quot;X[10] &lt;= 17.1\nmse = 0.08\nsamples = 3\nvalue = 23.7&quot;] ;
+396 -&gt; 397 ;
+398 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.3&quot;] ;
+397 -&gt; 398 ;
+399 [label=&quot;X[6] &lt;= 63.4\nmse = 0.0\nsamples = 2\nvalue = 23.9&quot;] ;
+397 -&gt; 399 ;
+400 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.9&quot;] ;
+399 -&gt; 400 ;
+401 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.9&quot;] ;
+399 -&gt; 401 ;
+402 [label=&quot;X[6] &lt;= 33.15\nmse = 0.016\nsamples = 3\nvalue = 24.967&quot;] ;
+396 -&gt; 402 ;
+403 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.8&quot;] ;
+402 -&gt; 403 ;
+404 [label=&quot;X[1] &lt;= 12.5\nmse = 0.002\nsamples = 2\nvalue = 25.05&quot;] ;
+402 -&gt; 404 ;
+405 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 25.1&quot;] ;
+404 -&gt; 405 ;
+406 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 25.0&quot;] ;
+404 -&gt; 406 ;
+407 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 21.0&quot;] ;
+393 -&gt; 407 ;
+408 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 27.1&quot;] ;
+392 -&gt; 408 ;
+409 [label=&quot;X[0] &lt;= 0.812\nmse = 17.14\nsamples = 100\nvalue = 16.015&quot;] ;
+1 -&gt; 409 ;
+410 [label=&quot;X[0] &lt;= 0.147\nmse = 7.681\nsamples = 48\nvalue = 18.948&quot;] ;
+409 -&gt; 410 ;
+411 [label=&quot;X[5] &lt;= 6.013\nmse = 5.884\nsamples = 12\nvalue = 21.25&quot;] ;
+410 -&gt; 411 ;
+412 [label=&quot;X[10] &lt;= 17.2\nmse = 1.836\nsamples = 10\nvalue = 20.35&quot;] ;
+411 -&gt; 412 ;
+413 [label=&quot;X[2] &lt;= 5.96\nmse = 0.987\nsamples = 4\nvalue = 21.65&quot;] ;
+412 -&gt; 413 ;
+414 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.1&quot;] ;
+413 -&gt; 414 ;
+415 [label=&quot;X[7] &lt;= 5.885\nmse = 0.382\nsamples = 3\nvalue = 21.167&quot;] ;
+413 -&gt; 415 ;
+416 [label=&quot;X[9] &lt;= 293.5\nmse = 0.01\nsamples = 2\nvalue = 21.6&quot;] ;
+415 -&gt; 416 ;
+417 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.5&quot;] ;
+416 -&gt; 417 ;
+418 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 21.7&quot;] ;
+416 -&gt; 418 ;
+419 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.3&quot;] ;
+415 -&gt; 419 ;
+420 [label=&quot;X[11] &lt;= 378.735\nmse = 0.525\nsamples = 6\nvalue = 19.483&quot;] ;
+412 -&gt; 420 ;
+421 [label=&quot;X[2] &lt;= 17.83\nmse = 0.002\nsamples = 2\nvalue = 20.45&quot;] ;
+420 -&gt; 421 ;
+422 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.4&quot;] ;
+421 -&gt; 422 ;
+423 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.5&quot;] ;
+421 -&gt; 423 ;
+424 [label=&quot;X[0] &lt;= 0.128\nmse = 0.085\nsamples = 4\nvalue = 19.0&quot;] ;
+420 -&gt; 424 ;
+425 [label=&quot;X[10] &lt;= 20.1\nmse = 0.002\nsamples = 3\nvalue = 18.833&quot;] ;
+424 -&gt; 425 ;
+426 [label=&quot;mse = 0.0\nsamples = 2\nvalue = 18.8&quot;] ;
+425 -&gt; 426 ;
+427 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.9&quot;] ;
+425 -&gt; 427 ;
+428 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.5&quot;] ;
+424 -&gt; 428 ;
+429 [label=&quot;X[12] &lt;= 16.905\nmse = 1.822\nsamples = 2\nvalue = 25.75&quot;] ;
+411 -&gt; 429 ;
+430 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.4&quot;] ;
+429 -&gt; 430 ;
+431 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 27.1&quot;] ;
+429 -&gt; 431 ;
+432 [label=&quot;X[6] &lt;= 92.75\nmse = 5.924\nsamples = 36\nvalue = 18.181&quot;] ;
+410 -&gt; 432 ;
+433 [label=&quot;X[2] &lt;= 10.3\nmse = 4.117\nsamples = 18\nvalue = 19.722&quot;] ;
+432 -&gt; 433 ;
+434 [label=&quot;X[11] &lt;= 393.99\nmse = 1.927\nsamples = 12\nvalue = 18.667&quot;] ;
+433 -&gt; 434 ;
+435 [label=&quot;X[8] &lt;= 4.5\nmse = 0.913\nsamples = 8\nvalue = 17.95&quot;] ;
+434 -&gt; 435 ;
+436 [label=&quot;X[6] &lt;= 84.35\nmse = 0.287\nsamples = 4\nvalue = 17.125&quot;] ;
+435 -&gt; 436 ;
+437 [label=&quot;X[2] &lt;= 9.02\nmse = 0.023\nsamples = 2\nvalue = 17.65&quot;] ;
+436 -&gt; 437 ;
+438 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 17.5&quot;] ;
+437 -&gt; 438 ;
+439 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 17.8&quot;] ;
+437 -&gt; 439 ;
+440 [label=&quot;mse = -0.0\nsamples = 2\nvalue = 16.6&quot;] ;
+436 -&gt; 440 ;
+441 [label=&quot;X[5] &lt;= 5.966\nmse = 0.177\nsamples = 4\nvalue = 18.775&quot;] ;
+435 -&gt; 441 ;
+442 [label=&quot;X[6] &lt;= 79.2\nmse = 0.01\nsamples = 2\nvalue = 18.4&quot;] ;
+441 -&gt; 442 ;
+443 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.5&quot;] ;
+442 -&gt; 443 ;
+444 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.3&quot;] ;
+442 -&gt; 444 ;
+445 [label=&quot;X[1] &lt;= 6.25\nmse = 0.062\nsamples = 2\nvalue = 19.15&quot;] ;
+441 -&gt; 445 ;
+446 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.4&quot;] ;
+445 -&gt; 446 ;
+447 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.9&quot;] ;
+445 -&gt; 447 ;
+448 [label=&quot;X[0] &lt;= 0.326\nmse = 0.875\nsamples = 4\nvalue = 20.1&quot;] ;
+434 -&gt; 448 ;
+449 [label=&quot;X[12] &lt;= 16.07\nmse = 0.029\nsamples = 3\nvalue = 19.567&quot;] ;
+448 -&gt; 449 ;
+450 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.8&quot;] ;
+449 -&gt; 450 ;
+451 [label=&quot;X[7] &lt;= 4.149\nmse = 0.002\nsamples = 2\nvalue = 19.45&quot;] ;
+449 -&gt; 451 ;
+452 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.5&quot;] ;
+451 -&gt; 452 ;
+453 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 19.4&quot;] ;
+451 -&gt; 453 ;
+454 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.7&quot;] ;
+448 -&gt; 454 ;
+455 [label=&quot;X[5] &lt;= 5.408\nmse = 1.812\nsamples = 6\nvalue = 21.833&quot;] ;
+433 -&gt; 455 ;
+456 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.3&quot;] ;
+455 -&gt; 456 ;
+457 [label=&quot;X[0] &lt;= 0.271\nmse = 0.634\nsamples = 5\nvalue = 22.34&quot;] ;
+455 -&gt; 457 ;
+458 [label=&quot;X[6] &lt;= 80.55\nmse = 0.215\nsamples = 4\nvalue = 22.0&quot;] ;
+457 -&gt; 458 ;
+459 [label=&quot;X[5] &lt;= 5.795\nmse = 0.003\nsamples = 2\nvalue = 22.45&quot;] ;
+458 -&gt; 459 ;
+460 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.5&quot;] ;
+459 -&gt; 460 ;
+461 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.4&quot;] ;
+459 -&gt; 461 ;
+462 [label=&quot;X[5] &lt;= 5.973\nmse = 0.022\nsamples = 2\nvalue = 21.55&quot;] ;
+458 -&gt; 462 ;
+463 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.7&quot;] ;
+462 -&gt; 463 ;
+464 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 21.4&quot;] ;
+462 -&gt; 464 ;
+465 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 23.7&quot;] ;
+457 -&gt; 465 ;
+466 [label=&quot;X[7] &lt;= 1.669\nmse = 2.978\nsamples = 18\nvalue = 16.639&quot;] ;
+432 -&gt; 466 ;
+467 [label=&quot;X[7] &lt;= 1.64\nmse = 0.122\nsamples = 2\nvalue = 13.65&quot;] ;
+466 -&gt; 467 ;
+468 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 14.0&quot;] ;
+467 -&gt; 468 ;
+469 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 13.3&quot;] ;
+467 -&gt; 469 ;
+470 [label=&quot;X[7] &lt;= 4.137\nmse = 2.079\nsamples = 16\nvalue = 17.012&quot;] ;
+466 -&gt; 470 ;
+471 [label=&quot;X[7] &lt;= 2.039\nmse = 1.264\nsamples = 11\nvalue = 17.7&quot;] ;
+470 -&gt; 471 ;
+472 [label=&quot;X[5] &lt;= 5.774\nmse = 0.599\nsamples = 7\nvalue = 17.071&quot;] ;
+471 -&gt; 472 ;
+473 [label=&quot;X[5] &lt;= 5.653\nmse = 0.062\nsamples = 2\nvalue = 15.95&quot;] ;
+472 -&gt; 473 ;
+474 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 15.7&quot;] ;
+473 -&gt; 474 ;
+475 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 16.2&quot;] ;
+473 -&gt; 475 ;
+476 [label=&quot;X[11] &lt;= 395.49\nmse = 0.11\nsamples = 5\nvalue = 17.52&quot;] ;
+472 -&gt; 476 ;
+477 [label=&quot;X[11] &lt;= 386.165\nmse = 0.016\nsamples = 3\nvalue = 17.267&quot;] ;
+476 -&gt; 477 ;
+478 [label=&quot;X[11] &lt;= 374.28\nmse = 0.002\nsamples = 2\nvalue = 17.35&quot;] ;
+477 -&gt; 478 ;
+479 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 17.3&quot;] ;
+478 -&gt; 479 ;
+480 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 17.4&quot;] ;
+478 -&gt; 480 ;
+481 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 17.1&quot;] ;
+477 -&gt; 481 ;
+482 [label=&quot;X[12] &lt;= 16.925\nmse = 0.01\nsamples = 2\nvalue = 17.9&quot;] ;
+476 -&gt; 482 ;
+483 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.0&quot;] ;
+482 -&gt; 483 ;
+484 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 17.8&quot;] ;
+482 -&gt; 484 ;
+485 [label=&quot;X[9] &lt;= 354.5\nmse = 0.525\nsamples = 4\nvalue = 18.8&quot;] ;
+471 -&gt; 485 ;
+486 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 20.0&quot;] ;
+485 -&gt; 486 ;
+487 [label=&quot;X[2] &lt;= 15.95\nmse = 0.06\nsamples = 3\nvalue = 18.4&quot;] ;
+485 -&gt; 487 ;
+488 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.7&quot;] ;
+487 -&gt; 488 ;
+489 [label=&quot;X[5] &lt;= 6.079\nmse = 0.023\nsamples = 2\nvalue = 18.25&quot;] ;
+487 -&gt; 489 ;
+490 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.4&quot;] ;
+489 -&gt; 490 ;
+491 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 18.1&quot;] ;
+489 -&gt; 491 ;
+492 [label=&quot;X[0] &lt;= 0.218\nmse = 0.544\nsamples = 5\nvalue = 15.5&quot;] ;
+470 -&gt; 492 ;
+493 [label=&quot;X[6] &lt;= 96.7\nmse = 0.062\nsamples = 2\nvalue = 16.25&quot;] ;
+492 -&gt; 493 ;
+494 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 16.0&quot;] ;
+493 -&gt; 494 ;
+495 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 16.5&quot;] ;
+493 -&gt; 495 ;
+496 [label=&quot;X[9] &lt;= 270.0\nmse = 0.24\nsamples = 3\nvalue = 15.0&quot;] ;
+492 -&gt; 496 ;
+497 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 14.4&quot;] ;
+496 -&gt; 497 ;
+498 [label=&quot;X[7] &lt;= 5.373\nmse = 0.09\nsamples = 2\nvalue = 15.3&quot;] ;
+496 -&gt; 498 ;
+499 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 15.6&quot;] ;
+498 -&gt; 499 ;
+500 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 15.0&quot;] ;
+498 -&gt; 500 ;
+501 [label=&quot;X[0] &lt;= 7.317\nmse = 10.603\nsamples = 52\nvalue = 13.308&quot;] ;
+409 -&gt; 501 ;
+502 [label=&quot;X[12] &lt;= 15.965\nmse = 5.239\nsamples = 29\nvalue = 15.066&quot;] ;
+501 -&gt; 502 ;
+503 [label=&quot;X[5] &lt;= 5.756\nmse = 1.526\nsamples = 5\nvalue = 17.24&quot;] ;
+502 -&gt; 503 ;
+504 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 19.4&quot;] ;
+503 -&gt; 504 ;
+505 [label=&quot;X[5] &lt;= 6.141\nmse = 0.45\nsamples = 4\nvalue = 16.7&quot;] ;
+503 -&gt; 505 ;
+506 [label=&quot;X[7] &lt;= 2.165\nmse = 0.062\nsamples = 3\nvalue = 17.067&quot;] ;
+505 -&gt; 506 ;
+507 [label=&quot;X[4] &lt;= 0.82\nmse = 0.01\nsamples = 2\nvalue = 16.9&quot;] ;
+506 -&gt; 507 ;
+508 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 16.8&quot;] ;
+507 -&gt; 508 ;
+509 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 17.0&quot;] ;
+507 -&gt; 509 ;
+510 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 17.4&quot;] ;
+506 -&gt; 510 ;
+511 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 15.6&quot;] ;
+505 -&gt; 511 ;
+512 [label=&quot;X[6] &lt;= 84.1\nmse = 4.822\nsamples = 24\nvalue = 14.612&quot;] ;
+502 -&gt; 512 ;
+513 [label=&quot;X[2] &lt;= 13.12\nmse = 25.0\nsamples = 2\nvalue = 18.2&quot;] ;
+512 -&gt; 513 ;
+514 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 13.2&quot;] ;
+513 -&gt; 514 ;
+515 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.2&quot;] ;
+513 -&gt; 515 ;
+516 [label=&quot;X[5] &lt;= 4.914\nmse = 1.711\nsamples = 22\nvalue = 14.286&quot;] ;
+512 -&gt; 516 ;
+517 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 11.8&quot;] ;
+516 -&gt; 517 ;
+518 [label=&quot;X[7] &lt;= 1.603\nmse = 1.484\nsamples = 21\nvalue = 14.405&quot;] ;
+516 -&gt; 518 ;
+519 [label=&quot;X[6] &lt;= 94.35\nmse = 1.649\nsamples = 8\nvalue = 15.075&quot;] ;
+518 -&gt; 519 ;
+520 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 17.8&quot;] ;
+519 -&gt; 520 ;
+521 [label=&quot;X[12] &lt;= 26.62\nmse = 0.673\nsamples = 7\nvalue = 14.686&quot;] ;
+519 -&gt; 521 ;
+522 [label=&quot;X[6] &lt;= 97.45\nmse = 0.009\nsamples = 3\nvalue = 15.533&quot;] ;
+521 -&gt; 522 ;
+523 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 15.4&quot;] ;
+522 -&gt; 523 ;
+524 [label=&quot;mse = -0.0\nsamples = 2\nvalue = 15.6&quot;] ;
+522 -&gt; 524 ;
+525 [label=&quot;X[5] &lt;= 5.211\nmse = 0.227\nsamples = 4\nvalue = 14.05&quot;] ;
+521 -&gt; 525 ;
+526 [label=&quot;X[0] &lt;= 1.999\nmse = 0.01\nsamples = 2\nvalue = 14.5&quot;] ;
+525 -&gt; 526 ;
+527 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 14.4&quot;] ;
+526 -&gt; 527 ;
+528 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 14.6&quot;] ;
+526 -&gt; 528 ;
+529 [label=&quot;X[3] &lt;= 0.5\nmse = 0.04\nsamples = 2\nvalue = 13.6&quot;] ;
+525 -&gt; 529 ;
+530 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 13.8&quot;] ;
+529 -&gt; 530 ;
+531 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 13.4&quot;] ;
+529 -&gt; 531 ;
+532 [label=&quot;X[7] &lt;= 1.831\nmse = 0.936\nsamples = 13\nvalue = 13.992&quot;] ;
+518 -&gt; 532 ;
+533 [label=&quot;X[10] &lt;= 17.45\nmse = 0.09\nsamples = 2\nvalue = 12.8&quot;] ;
+532 -&gt; 533 ;
+534 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 13.1&quot;] ;
+533 -&gt; 534 ;
+535 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 12.5&quot;] ;
+533 -&gt; 535 ;
+536 [label=&quot;X[12] &lt;= 20.11\nmse = 0.784\nsamples = 11\nvalue = 14.209&quot;] ;
+532 -&gt; 536 ;
+537 [label=&quot;X[5] &lt;= 5.707\nmse = 0.56\nsamples = 8\nvalue = 14.562&quot;] ;
+536 -&gt; 537 ;
+538 [label=&quot;X[12] &lt;= 18.345\nmse = 0.249\nsamples = 3\nvalue = 13.767&quot;] ;
+537 -&gt; 538 ;
+539 [label=&quot;X[9] &lt;= 372.0\nmse = 0.04\nsamples = 2\nvalue = 14.1&quot;] ;
+538 -&gt; 539 ;
+540 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 13.9&quot;] ;
+539 -&gt; 540 ;
+541 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 14.3&quot;] ;
+539 -&gt; 541 ;
+542 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 13.1&quot;] ;
+538 -&gt; 542 ;
+543 [label=&quot;X[7] &lt;= 4.036\nmse = 0.138\nsamples = 5\nvalue = 15.04&quot;] ;
+537 -&gt; 543 ;
+544 [label=&quot;X[2] &lt;= 19.995\nmse = 0.047\nsamples = 3\nvalue = 15.3&quot;] ;
+543 -&gt; 544 ;
+545 [label=&quot;X[7] &lt;= 2.952\nmse = 0.003\nsamples = 2\nvalue = 15.15&quot;] ;
+544 -&gt; 545 ;
+546 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 15.1&quot;] ;
+545 -&gt; 546 ;
+547 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 15.2&quot;] ;
+545 -&gt; 547 ;
+548 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 15.6&quot;] ;
+544 -&gt; 548 ;
+549 [label=&quot;X[6] &lt;= 94.4\nmse = 0.023\nsamples = 2\nvalue = 14.65&quot;] ;
+543 -&gt; 549 ;
+550 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 14.8&quot;] ;
+549 -&gt; 550 ;
+551 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 14.5&quot;] ;
+549 -&gt; 551 ;
+552 [label=&quot;X[7] &lt;= 4.015\nmse = 0.162\nsamples = 3\nvalue = 13.267&quot;] ;
+536 -&gt; 552 ;
+553 [label=&quot;X[0] &lt;= 1.432\nmse = 0.003\nsamples = 2\nvalue = 13.55&quot;] ;
+552 -&gt; 553 ;
+554 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 13.6&quot;] ;
+553 -&gt; 554 ;
+555 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 13.5&quot;] ;
+553 -&gt; 555 ;
+556 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 12.7&quot;] ;
+552 -&gt; 556 ;
+557 [label=&quot;X[5] &lt;= 5.87\nmse = 8.557\nsamples = 23\nvalue = 11.091&quot;] ;
+501 -&gt; 557 ;
+558 [label=&quot;X[7] &lt;= 1.3\nmse = 6.749\nsamples = 14\nvalue = 9.736&quot;] ;
+557 -&gt; 558 ;
+559 [label=&quot;mse = 0.0\nsamples = 2\nvalue = 13.8&quot;] ;
+558 -&gt; 559 ;
+560 [label=&quot;X[12] &lt;= 29.125\nmse = 4.662\nsamples = 12\nvalue = 9.058&quot;] ;
+558 -&gt; 560 ;
+561 [label=&quot;X[0] &lt;= 7.832\nmse = 1.569\nsamples = 6\nvalue = 10.633&quot;] ;
+560 -&gt; 561 ;
+562 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 8.5&quot;] ;
+561 -&gt; 562 ;
+563 [label=&quot;X[12] &lt;= 25.12\nmse = 0.79\nsamples = 5\nvalue = 11.06&quot;] ;
+561 -&gt; 563 ;
+564 [label=&quot;X[7] &lt;= 1.557\nmse = 0.187\nsamples = 3\nvalue = 11.7&quot;] ;
+563 -&gt; 564 ;
+565 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 12.3&quot;] ;
+564 -&gt; 565 ;
+566 [label=&quot;X[6] &lt;= 99.45\nmse = 0.01\nsamples = 2\nvalue = 11.4&quot;] ;
+564 -&gt; 566 ;
+567 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 11.5&quot;] ;
+566 -&gt; 567 ;
+568 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 11.3&quot;] ;
+566 -&gt; 568 ;
+569 [label=&quot;X[5] &lt;= 4.844\nmse = 0.16\nsamples = 2\nvalue = 10.1&quot;] ;
+563 -&gt; 569 ;
+570 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 10.5&quot;] ;
+569 -&gt; 570 ;
+571 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 9.7&quot;] ;
+569 -&gt; 571 ;
+572 [label=&quot;X[5] &lt;= 4.94\nmse = 2.795\nsamples = 6\nvalue = 7.483&quot;] ;
+560 -&gt; 572 ;
+573 [label=&quot;X[12] &lt;= 30.625\nmse = 0.49\nsamples = 2\nvalue = 9.5&quot;] ;
+572 -&gt; 573 ;
+574 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 10.2&quot;] ;
+573 -&gt; 574 ;
+575 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 8.8&quot;] ;
+573 -&gt; 575 ;
+576 [label=&quot;X[6] &lt;= 99.05\nmse = 0.897\nsamples = 4\nvalue = 6.475&quot;] ;
+572 -&gt; 576 ;
+577 [label=&quot;X[6] &lt;= 83.65\nmse = 0.229\nsamples = 3\nvalue = 6.967&quot;] ;
+576 -&gt; 577 ;
+578 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 6.3&quot;] ;
+577 -&gt; 578 ;
+579 [label=&quot;X[0] &lt;= 19.704\nmse = 0.01\nsamples = 2\nvalue = 7.3&quot;] ;
+577 -&gt; 579 ;
+580 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 7.2&quot;] ;
+579 -&gt; 580 ;
+581 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 7.4&quot;] ;
+579 -&gt; 581 ;
+582 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 5.0&quot;] ;
+576 -&gt; 582 ;
+583 [label=&quot;X[7] &lt;= 1.957\nmse = 4.064\nsamples = 9\nvalue = 13.2&quot;] ;
+557 -&gt; 583 ;
+584 [label=&quot;X[6] &lt;= 98.95\nmse = 1.597\nsamples = 8\nvalue = 12.625&quot;] ;
+583 -&gt; 584 ;
+585 [label=&quot;X[6] &lt;= 94.0\nmse = 0.175\nsamples = 6\nvalue = 13.317&quot;] ;
+584 -&gt; 585 ;
+586 [label=&quot;X[6] &lt;= 92.95\nmse = 0.002\nsamples = 2\nvalue = 13.85&quot;] ;
+585 -&gt; 586 ;
+587 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 13.8&quot;] ;
+586 -&gt; 587 ;
+588 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 13.9&quot;] ;
+586 -&gt; 588 ;
+589 [label=&quot;X[6] &lt;= 95.45\nmse = 0.047\nsamples = 4\nvalue = 13.05&quot;] ;
+585 -&gt; 589 ;
+590 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 12.7&quot;] ;
+589 -&gt; 590 ;
+591 [label=&quot;X[5] &lt;= 6.633\nmse = 0.009\nsamples = 3\nvalue = 13.167&quot;] ;
+589 -&gt; 591 ;
+592 [label=&quot;mse = 0.0\nsamples = 2\nvalue = 13.1&quot;] ;
+591 -&gt; 592 ;
+593 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 13.3&quot;] ;
+591 -&gt; 593 ;
+594 [label=&quot;X[12] &lt;= 21.43\nmse = 0.122\nsamples = 2\nvalue = 10.55&quot;] ;
+584 -&gt; 594 ;
+595 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 10.9&quot;] ;
+594 -&gt; 595 ;
+596 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 10.2&quot;] ;
+594 -&gt; 596 ;
+597 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 17.8&quot;] ;
+583 -&gt; 597 ;
+598 [label=&quot;X[5] &lt;= 7.437\nmse = 72.946\nsamples = 86\nvalue = 36.573&quot;] ;
+0 -&gt; 598 [labeldistance=2.5, labelangle=-45, headlabel=&quot;False&quot;] ;
+599 [label=&quot;X[0] &lt;= 13.074\nmse = 32.634\nsamples = 56\nvalue = 32.007&quot;] ;
+598 -&gt; 599 ;
+600 [label=&quot;X[7] &lt;= 1.886\nmse = 19.329\nsamples = 54\nvalue = 32.722&quot;] ;
+599 -&gt; 600 ;
+601 [label=&quot;X[9] &lt;= 534.5\nmse = 18.923\nsamples = 2\nvalue = 45.65&quot;] ;
+600 -&gt; 601 ;
+602 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 41.3&quot;] ;
+601 -&gt; 602 ;
+603 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 50.0&quot;] ;
+601 -&gt; 603 ;
+604 [label=&quot;X[5] &lt;= 7.121\nmse = 12.67\nsamples = 52\nvalue = 32.225&quot;] ;
+600 -&gt; 604 ;
+605 [label=&quot;X[12] &lt;= 5.3\nmse = 13.741\nsamples = 30\nvalue = 30.713&quot;] ;
+604 -&gt; 605 ;
+606 [label=&quot;X[12] &lt;= 5.035\nmse = 6.799\nsamples = 16\nvalue = 32.944&quot;] ;
+605 -&gt; 606 ;
+607 [label=&quot;X[10] &lt;= 18.9\nmse = 4.948\nsamples = 14\nvalue = 32.35&quot;] ;
+606 -&gt; 607 ;
+608 [label=&quot;X[4] &lt;= 0.402\nmse = 3.605\nsamples = 12\nvalue = 32.9&quot;] ;
+607 -&gt; 608 ;
+609 [label=&quot;X[8] &lt;= 3.0\nmse = 1.102\nsamples = 2\nvalue = 30.05&quot;] ;
+608 -&gt; 609 ;
+610 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 31.1&quot;] ;
+609 -&gt; 610 ;
+611 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 29.0&quot;] ;
+609 -&gt; 611 ;
+612 [label=&quot;X[0] &lt;= 0.031\nmse = 2.156\nsamples = 10\nvalue = 33.47&quot;] ;
+608 -&gt; 612 ;
+613 [label=&quot;X[9] &lt;= 313.0\nmse = 0.04\nsamples = 2\nvalue = 31.4&quot;] ;
+612 -&gt; 613 ;
+614 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 31.6&quot;] ;
+613 -&gt; 614 ;
+615 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 31.2&quot;] ;
+613 -&gt; 615 ;
+616 [label=&quot;X[2] &lt;= 4.71\nmse = 1.346\nsamples = 8\nvalue = 33.988&quot;] ;
+612 -&gt; 616 ;
+617 [label=&quot;X[6] &lt;= 41.5\nmse = 0.482\nsamples = 5\nvalue = 34.74&quot;] ;
+616 -&gt; 617 ;
+618 [label=&quot;X[11] &lt;= 393.925\nmse = 0.042\nsamples = 4\nvalue = 35.075&quot;] ;
+617 -&gt; 618 ;
+619 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 35.4&quot;] ;
+618 -&gt; 619 ;
+620 [label=&quot;X[1] &lt;= 47.5\nmse = 0.009\nsamples = 3\nvalue = 34.967&quot;] ;
+618 -&gt; 620 ;
+621 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 35.1&quot;] ;
+620 -&gt; 621 ;
+622 [label=&quot;mse = -0.0\nsamples = 2\nvalue = 34.9&quot;] ;
+620 -&gt; 622 ;
+623 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 33.4&quot;] ;
+617 -&gt; 623 ;
+624 [label=&quot;X[12] &lt;= 3.57\nmse = 0.269\nsamples = 3\nvalue = 32.733&quot;] ;
+616 -&gt; 624 ;
+625 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 32.0&quot;] ;
+624 -&gt; 625 ;
+626 [label=&quot;X[9] &lt;= 291.5\nmse = 0.0\nsamples = 2\nvalue = 33.1&quot;] ;
+624 -&gt; 626 ;
+627 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 33.1&quot;] ;
+626 -&gt; 627 ;
+628 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 33.1&quot;] ;
+626 -&gt; 628 ;
+629 [label=&quot;X[9] &lt;= 287.5\nmse = 0.302\nsamples = 2\nvalue = 29.05&quot;] ;
+607 -&gt; 629 ;
+630 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 28.5&quot;] ;
+629 -&gt; 630 ;
+631 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 29.6&quot;] ;
+629 -&gt; 631 ;
+632 [label=&quot;X[0] &lt;= 0.074\nmse = 0.01\nsamples = 2\nvalue = 37.1&quot;] ;
+606 -&gt; 632 ;
+633 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 37.2&quot;] ;
+632 -&gt; 633 ;
+634 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 37.0&quot;] ;
+632 -&gt; 634 ;
+635 [label=&quot;X[5] &lt;= 7.01\nmse = 9.492\nsamples = 14\nvalue = 28.164&quot;] ;
+605 -&gt; 635 ;
+636 [label=&quot;X[7] &lt;= 3.347\nmse = 6.658\nsamples = 9\nvalue = 26.6&quot;] ;
+635 -&gt; 636 ;
+637 [label=&quot;X[12] &lt;= 7.225\nmse = 1.77\nsamples = 5\nvalue = 28.48&quot;] ;
+636 -&gt; 637 ;
+638 [label=&quot;X[7] &lt;= 2.463\nmse = 0.01\nsamples = 2\nvalue = 30.0&quot;] ;
+637 -&gt; 638 ;
+639 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 30.1&quot;] ;
+638 -&gt; 639 ;
+640 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 29.9&quot;] ;
+638 -&gt; 640 ;
+641 [label=&quot;X[5] &lt;= 6.915\nmse = 0.376\nsamples = 3\nvalue = 27.467&quot;] ;
+637 -&gt; 641 ;
+642 [label=&quot;X[3] &lt;= 0.5\nmse = 0.122\nsamples = 2\nvalue = 27.85&quot;] ;
+641 -&gt; 642 ;
+643 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 28.2&quot;] ;
+642 -&gt; 643 ;
+644 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 27.5&quot;] ;
+642 -&gt; 644 ;
+645 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 26.7&quot;] ;
+641 -&gt; 645 ;
+646 [label=&quot;X[2] &lt;= 2.825\nmse = 2.827\nsamples = 4\nvalue = 24.25&quot;] ;
+636 -&gt; 646 ;
+647 [label=&quot;X[5] &lt;= 6.905\nmse = 0.81\nsamples = 2\nvalue = 25.7&quot;] ;
+646 -&gt; 647 ;
+648 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 24.8&quot;] ;
+647 -&gt; 648 ;
+649 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 26.6&quot;] ;
+647 -&gt; 649 ;
+650 [label=&quot;X[6] &lt;= 70.3\nmse = 0.64\nsamples = 2\nvalue = 22.8&quot;] ;
+646 -&gt; 650 ;
+651 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 22.0&quot;] ;
+650 -&gt; 651 ;
+652 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 23.6&quot;] ;
+650 -&gt; 652 ;
+653 [label=&quot;X[0] &lt;= 0.033\nmse = 2.262\nsamples = 5\nvalue = 30.98&quot;] ;
+635 -&gt; 653 ;
+654 [label=&quot;X[1] &lt;= 53.75\nmse = 0.16\nsamples = 2\nvalue = 32.6&quot;] ;
+653 -&gt; 654 ;
+655 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 33.0&quot;] ;
+654 -&gt; 655 ;
+656 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 32.2&quot;] ;
+654 -&gt; 656 ;
+657 [label=&quot;X[11] &lt;= 390.065\nmse = 0.747\nsamples = 3\nvalue = 29.9&quot;] ;
+653 -&gt; 657 ;
+658 [label=&quot;X[9] &lt;= 296.5\nmse = 0.04\nsamples = 2\nvalue = 30.5&quot;] ;
+657 -&gt; 658 ;
+659 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 30.7&quot;] ;
+658 -&gt; 659 ;
+660 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 30.3&quot;] ;
+658 -&gt; 660 ;
+661 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 28.7&quot;] ;
+657 -&gt; 661 ;
+662 [label=&quot;X[9] &lt;= 249.5\nmse = 3.843\nsamples = 22\nvalue = 34.286&quot;] ;
+604 -&gt; 662 ;
+663 [label=&quot;X[5] &lt;= 7.17\nmse = 2.002\nsamples = 7\nvalue = 35.857&quot;] ;
+662 -&gt; 663 ;
+664 [label=&quot;X[2] &lt;= 2.32\nmse = 0.496\nsamples = 3\nvalue = 37.133&quot;] ;
+663 -&gt; 664 ;
+665 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 36.2&quot;] ;
+664 -&gt; 665 ;
+666 [label=&quot;X[0] &lt;= 0.085\nmse = 0.09\nsamples = 2\nvalue = 37.6&quot;] ;
+664 -&gt; 666 ;
+667 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 37.3&quot;] ;
+666 -&gt; 667 ;
+668 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 37.9&quot;] ;
+666 -&gt; 668 ;
+669 [label=&quot;X[11] &lt;= 396.415\nmse = 0.995\nsamples = 4\nvalue = 34.9&quot;] ;
+663 -&gt; 669 ;
+670 [label=&quot;X[9] &lt;= 224.0\nmse = 0.327\nsamples = 3\nvalue = 35.4&quot;] ;
+669 -&gt; 670 ;
+671 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 36.1&quot;] ;
+670 -&gt; 671 ;
+672 [label=&quot;X[5] &lt;= 7.217\nmse = 0.123\nsamples = 2\nvalue = 35.05&quot;] ;
+670 -&gt; 672 ;
+673 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 34.7&quot;] ;
+672 -&gt; 673 ;
+674 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 35.4&quot;] ;
+672 -&gt; 674 ;
+675 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 33.4&quot;] ;
+669 -&gt; 675 ;
+676 [label=&quot;X[10] &lt;= 15.35\nmse = 3.013\nsamples = 15\nvalue = 33.553&quot;] ;
+662 -&gt; 676 ;
+677 [label=&quot;X[12] &lt;= 10.42\nmse = 3.022\nsamples = 8\nvalue = 34.562&quot;] ;
+676 -&gt; 677 ;
+678 [label=&quot;X[11] &lt;= 391.345\nmse = 1.382\nsamples = 7\nvalue = 35.071&quot;] ;
+677 -&gt; 678 ;
+679 [label=&quot;X[0] &lt;= 0.607\nmse = 0.047\nsamples = 3\nvalue = 36.3&quot;] ;
+678 -&gt; 679 ;
+680 [label=&quot;X[7] &lt;= 4.205\nmse = 0.002\nsamples = 2\nvalue = 36.45&quot;] ;
+679 -&gt; 680 ;
+681 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 36.5&quot;] ;
+680 -&gt; 681 ;
+682 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 36.4&quot;] ;
+680 -&gt; 682 ;
+683 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 36.0&quot;] ;
+679 -&gt; 683 ;
+684 [label=&quot;X[5] &lt;= 7.281\nmse = 0.402\nsamples = 4\nvalue = 34.15&quot;] ;
+678 -&gt; 684 ;
+685 [label=&quot;X[4] &lt;= 0.542\nmse = 0.216\nsamples = 3\nvalue = 34.433&quot;] ;
+684 -&gt; 685 ;
+686 [label=&quot;X[1] &lt;= 62.5\nmse = 0.022\nsamples = 2\nvalue = 34.75&quot;] ;
+685 -&gt; 686 ;
+687 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 34.9&quot;] ;
+686 -&gt; 687 ;
+688 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 34.6&quot;] ;
+686 -&gt; 688 ;
+689 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 33.8&quot;] ;
+685 -&gt; 689 ;
+690 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 33.3&quot;] ;
+684 -&gt; 690 ;
+691 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 31.0&quot;] ;
+677 -&gt; 691 ;
+692 [label=&quot;X[0] &lt;= 0.259\nmse = 0.509\nsamples = 7\nvalue = 32.4&quot;] ;
+676 -&gt; 692 ;
+693 [label=&quot;X[12] &lt;= 5.77\nmse = 0.045\nsamples = 4\nvalue = 33.0&quot;] ;
+692 -&gt; 693 ;
+694 [label=&quot;X[12] &lt;= 4.97\nmse = 0.01\nsamples = 2\nvalue = 32.8&quot;] ;
+693 -&gt; 694 ;
+695 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 32.9&quot;] ;
+694 -&gt; 695 ;
+696 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 32.7&quot;] ;
+694 -&gt; 696 ;
+697 [label=&quot;mse = 0.0\nsamples = 2\nvalue = 33.2&quot;] ;
+693 -&gt; 697 ;
+698 [label=&quot;X[5] &lt;= 7.385\nmse = 0.007\nsamples = 3\nvalue = 31.6&quot;] ;
+692 -&gt; 698 ;
+699 [label=&quot;X[4] &lt;= 0.506\nmse = 0.003\nsamples = 2\nvalue = 31.55&quot;] ;
+698 -&gt; 699 ;
+700 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 31.6&quot;] ;
+699 -&gt; 700 ;
+701 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 31.5&quot;] ;
+699 -&gt; 701 ;
+702 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 31.7&quot;] ;
+698 -&gt; 702 ;
+703 [label=&quot;X[0] &lt;= 54.293\nmse = 5.29\nsamples = 2\nvalue = 12.7&quot;] ;
+599 -&gt; 703 ;
+704 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 15.0&quot;] ;
+703 -&gt; 704 ;
+705 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 10.4&quot;] ;
+703 -&gt; 705 ;
+706 [label=&quot;X[0] &lt;= 2.742\nmse = 36.628\nsamples = 30\nvalue = 45.097&quot;] ;
+598 -&gt; 706 ;
+707 [label=&quot;X[10] &lt;= 14.8\nmse = 18.697\nsamples = 29\nvalue = 45.897&quot;] ;
+706 -&gt; 707 ;
+708 [label=&quot;X[5] &lt;= 7.706\nmse = 8.027\nsamples = 14\nvalue = 48.3&quot;] ;
+707 -&gt; 708 ;
+709 [label=&quot;X[6] &lt;= 90.1\nmse = 9.462\nsamples = 4\nvalue = 44.725&quot;] ;
+708 -&gt; 709 ;
+710 [label=&quot;X[0] &lt;= 0.278\nmse = 0.249\nsamples = 3\nvalue = 42.967&quot;] ;
+709 -&gt; 710 ;
+711 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 42.3&quot;] ;
+710 -&gt; 711 ;
+712 [label=&quot;X[11] &lt;= 389.335\nmse = 0.04\nsamples = 2\nvalue = 43.3&quot;] ;
+710 -&gt; 712 ;
+713 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 43.1&quot;] ;
+712 -&gt; 713 ;
+714 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 43.5&quot;] ;
+712 -&gt; 714 ;
+715 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 50.0&quot;] ;
+709 -&gt; 715 ;
+716 [label=&quot;X[12] &lt;= 3.755\nmse = 0.296\nsamples = 10\nvalue = 49.73&quot;] ;
+708 -&gt; 716 ;
+717 [label=&quot;mse = 0.0\nsamples = 6\nvalue = 50.0&quot;] ;
+716 -&gt; 717 ;
+718 [label=&quot;X[0] &lt;= 0.549\nmse = 0.467\nsamples = 4\nvalue = 49.325&quot;] ;
+716 -&gt; 718 ;
+719 [label=&quot;X[1] &lt;= 57.5\nmse = 0.023\nsamples = 2\nvalue = 48.65&quot;] ;
+718 -&gt; 719 ;
+720 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 48.8&quot;] ;
+719 -&gt; 720 ;
+721 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 48.5&quot;] ;
+719 -&gt; 721 ;
+722 [label=&quot;mse = -0.0\nsamples = 2\nvalue = 50.0&quot;] ;
+718 -&gt; 722 ;
+723 [label=&quot;X[11] &lt;= 385.48\nmse = 18.232\nsamples = 15\nvalue = 43.653&quot;] ;
+707 -&gt; 723 ;
+724 [label=&quot;X[0] &lt;= 0.323\nmse = 3.298\nsamples = 5\nvalue = 47.16&quot;] ;
+723 -&gt; 724 ;
+725 [label=&quot;X[6] &lt;= 64.0\nmse = 0.616\nsamples = 3\nvalue = 45.833&quot;] ;
+724 -&gt; 725 ;
+726 [label=&quot;X[0] &lt;= 0.18\nmse = 0.122\nsamples = 2\nvalue = 46.35&quot;] ;
+725 -&gt; 726 ;
+727 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 46.0&quot;] ;
+726 -&gt; 727 ;
+728 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 46.7&quot;] ;
+726 -&gt; 728 ;
+729 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 44.8&quot;] ;
+725 -&gt; 729 ;
+730 [label=&quot;X[11] &lt;= 380.475\nmse = 0.722\nsamples = 2\nvalue = 49.15&quot;] ;
+724 -&gt; 730 ;
+731 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 48.3&quot;] ;
+730 -&gt; 731 ;
+732 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 50.0&quot;] ;
+730 -&gt; 732 ;
+733 [label=&quot;X[0] &lt;= 0.061\nmse = 16.476\nsamples = 10\nvalue = 41.9&quot;] ;
+723 -&gt; 733 ;
+734 [label=&quot;X[4] &lt;= 0.465\nmse = 6.569\nsamples = 3\nvalue = 46.467&quot;] ;
+733 -&gt; 734 ;
+735 [label=&quot;X[7] &lt;= 5.515\nmse = 0.49\nsamples = 2\nvalue = 44.7&quot;] ;
+734 -&gt; 735 ;
+736 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 45.4&quot;] ;
+735 -&gt; 736 ;
+737 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 44.0&quot;] ;
+735 -&gt; 737 ;
+738 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 50.0&quot;] ;
+734 -&gt; 738 ;
+739 [label=&quot;X[6] &lt;= 44.35\nmse = 7.954\nsamples = 7\nvalue = 39.943&quot;] ;
+733 -&gt; 739 ;
+740 [label=&quot;X[5] &lt;= 8.039\nmse = 0.25\nsamples = 2\nvalue = 43.3&quot;] ;
+739 -&gt; 740 ;
+741 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 43.8&quot;] ;
+740 -&gt; 741 ;
+742 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 42.8&quot;] ;
+740 -&gt; 742 ;
+743 [label=&quot;X[5] &lt;= 7.728\nmse = 4.724\nsamples = 5\nvalue = 38.6&quot;] ;
+739 -&gt; 743 ;
+744 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 35.2&quot;] ;
+743 -&gt; 744 ;
+745 [label=&quot;X[12] &lt;= 2.8\nmse = 2.293\nsamples = 4\nvalue = 39.45&quot;] ;
+743 -&gt; 745 ;
+746 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 41.7&quot;] ;
+745 -&gt; 746 ;
+747 [label=&quot;X[11] &lt;= 391.47\nmse = 0.807\nsamples = 3\nvalue = 38.7&quot;] ;
+745 -&gt; 747 ;
+748 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 37.6&quot;] ;
+747 -&gt; 748 ;
+749 [label=&quot;X[12] &lt;= 5.885\nmse = 0.302\nsamples = 2\nvalue = 39.25&quot;] ;
+747 -&gt; 749 ;
+750 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 38.7&quot;] ;
+749 -&gt; 750 ;
+751 [label=&quot;mse = 0.0\nsamples = 1\nvalue = 39.8&quot;] ;
+749 -&gt; 751 ;
+752 [label=&quot;mse = -0.0\nsamples = 1\nvalue = 21.9&quot;] ;
+706 -&gt; 752 ;
+}
+</code></pre><p>(Yes this is the output, and the graph you will get will blow your mind! But it&rsquo;s worth studying 😃)</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Congratulations for building your first machine learning model! As you have seen, machine learning can be a great tool to help you figure out various stuff, which will be tedious if done manually.</p>
+<p>Now that you have built your first machine learning model, you can explore further about concepts like underfitting and overfitting. Google, YouTube (and of course, PyCon) are your friends :)</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/blog/offline-speech-with-vosk/" data-toggle="tooltip" data-placement="top" title="Offline Speech Recognition with Vosk">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/projects/pymetrix/home/" data-toggle="tooltip" data-placement="top" title="Pymetrix: The Open Source Plug and Play Python Analytics Library">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-anuran-roy-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/ai" title="ai">
+                            ai
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/analytics" title="analytics">
+                            analytics
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/beginner" title="beginner">
+                            beginner
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/foss" title="foss">
+                            foss
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/machine-learning" title="machine-learning">
+                            machine-learning
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/nlp" title="nlp">
+                            nlp
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/nltk" title="nltk">
+                            nltk
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/pymetrix" title="pymetrix">
+                            pymetrix
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/python" title="python">
+                            python
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/scikit-learn" title="scikit-learn">
+                            scikit-learn
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/vosk" title="vosk">
+                            vosk
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="A Tinkerer&#39;s Canvas" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:anuranroy02@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+                    
+                    <li>
+                        <a href="https://twitter.com/AnuranRoy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/anuran-roy">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/anuran-roy/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; A Tinkerer&#39;s Canvas 2022
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

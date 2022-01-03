@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tops on A Tinkerer&#39;s Canvas</title>
+    <link>https://anuran-roy.github.io/top/</link>
+    <description>Recent content in Tops on A Tinkerer&#39;s Canvas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Aug 2021 02:20:07 +0530</lastBuildDate><atom:link href="https://anuran-roy.github.io/top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Projects</title>
+      <link>https://anuran-roy.github.io/top/projects/</link>
+      <pubDate>Wed, 18 Aug 2021 02:20:07 +0530</pubDate>
+      
+      <guid>https://anuran-roy.github.io/top/projects/</guid>
+      <description>My Projects Hey there! I like to call myself as a creative workaholic, and love making novel stuff, which can be something out-of-the-box.
+My Github activity:
+ So without further banter, let me show you some of them:
+1. OpnEco Description &amp;ldquo;Ah, if only I could get someone to read this for feedback.&amp;rdquo; &amp;ldquo;Only if I could know which keywords to target&amp;hellip;&amp;rdquo;
+We all have been there, haven&amp;rsquo;t we?
+OpnEco is a Python3 project developed just for that.</description>
+    </item>
+    
+    <item>
+      <title>Other Blogs</title>
+      <link>https://anuran-roy.github.io/top/other-blogs/</link>
+      <pubDate>Mon, 26 Jul 2021 03:56:24 +0530</pubDate>
+      
+      <guid>https://anuran-roy.github.io/top/other-blogs/</guid>
+      <description>Technical Blogs Art of Problem Solving This is my oldest blog, which is quite inactive now. But to be honest, this was the first blog that I worked on seriously. So many good memories abound&amp;hellip;
+You can find a lot of math and CS content here. Even a series on ML simply explained. I use the pseudonym A-student there.
+My AoPS Blog
+Hashnode My Hashnode blog
+My College Club blogs 1.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://anuran-roy.github.io/top/about/</link>
+      <pubDate>Mon, 26 Jul 2021 03:45:58 +0530</pubDate>
+      
+      <guid>https://anuran-roy.github.io/top/about/</guid>
+      <description>Who am I? Roy. Anuran Roy. (I like James Bond.) I&amp;rsquo;m a machine that converts coffee to code.
+I am a sophocrat sophomore at VIT Vellore. Thanks to the CoVid pandemic and the lockdown it gave us for free, I am still at home, not waiting to go to college.
+In the meantime, I am trying to learn a few stuff (read Web Dev and Competitive Coding :P). This is one such (noobish) example of how much I have developed in web dev :P</description>
+    </item>
+    
+  </channel>
+</rss>

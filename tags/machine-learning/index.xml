@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine learning on A Tinkerer&#39;s Canvas</title>
+    <link>https://anuran-roy.github.io/tags/machine-learning/</link>
+    <description>Recent content in machine learning on A Tinkerer&#39;s Canvas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://anuran-roy.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Machine learning and the Pythonic buzz</title>
+      <link>https://anuran-roy.github.io/post/blog/machine-learning/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://anuran-roy.github.io/post/blog/machine-learning/</guid>
+      <description>&amp;ldquo;Predicting the future isn&amp;rsquo;t magic, it&amp;rsquo;s artificial intelligence&amp;rdquo; ~Dave Waters
+Yes, and machine learning is one of the most fascinating aspects of Artificial Intelligence.
+So what is machine learning? Machine learning leverages the power of statistical modelling to learn patterns in data that can be leveraged to predict outcomes from previously unseen data.
+Sounds too jargon-y? Let me break it up for you:
+Imagine a situation, where you are one of the decision makers in a business, and you want to increase the company profits for the next quarter, based on various products of your company.</description>
+    </item>
+    
+  </channel>
+</rss>
