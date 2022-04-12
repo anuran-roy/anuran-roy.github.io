@@ -40,7 +40,7 @@ Organization The Flow Graph: The backbone Being heavily inspired from Google Ana
       <description>Download as .zip Download as .tar.gz View on Github        Pymetrix-Python What is Pymetrix? Pymetrix is a plug-and-play analytics library written in Python.
 Usage Pymetrix is really easy to integrate with your projects. Here&amp;rsquo;s an example:
 Let&amp;rsquo;s say you want to monitor a method foo() defined as:
-from random import randint def foo(): print(f&amp;#34;Hello world {randint(0,1000000)}!&amp;#34;) After adding the required lines, the code will look something like this:</description>
+1 2 3 4  from random import randint def foo(): print(f&amp;#34;Hello world {randint(0,1000000)}!&amp;#34;)   After adding the required lines, the code will look something like this:</description>
     </item>
     
     <item>
@@ -65,9 +65,8 @@ Imagine a situation, where you are one of the decision makers in a business, and
       <description>My Projects Hey there! I like to call myself as a creative workaholic, and love making novel stuff, which can be something out-of-the-box.
 My Github activity:
  So without further banter, let me show you some of them:
-1. OpnEco Description &amp;ldquo;Ah, if only I could get someone to read this for feedback.&amp;rdquo; &amp;ldquo;Only if I could know which keywords to target&amp;hellip;&amp;rdquo;
-We all have been there, haven&amp;rsquo;t we?
-OpnEco is a Python3 project developed just for that.</description>
+1. Pymetrix (previously called Analyx) 
+Description Pymetrix (previously known as Analyx) is a plug-and-play analytics library written in Python. It aims to be lightweight and effective at capturing most of the basic metrics for your website, with the possibility of adding more through the use of extensions.</description>
     </item>
     
     <item>

@@ -292,16 +292,31 @@
 </ol>
 <p>So first, we need to install the appropriate <code>pulseaudio</code>, <code>alsa</code> and <code>jack</code> drivers, among others.</p>
 <p>Assuming you&rsquo;re running Debian (or Ubuntu), type the following commands:</p>
-<pre><code>sudo apt-get install gcc automake autoconf libtool bison swig python3-dev
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">sudo apt-get install gcc automake autoconf libtool bison swig python3-dev
 sudo apt-get install libpulse-dev jackd libasound2-dev
-</code></pre><p><strong>Note</strong>: Don&rsquo;t try to combine the above 2 statements (no pro-gamer move now 😜). <code>libasound2-dev</code> and <code>jackd</code> require <code>swig</code> to build their driver codes.</p>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Note</strong>: Don&rsquo;t try to combine the above 2 statements (no pro-gamer move now 😜). <code>libasound2-dev</code> and <code>jackd</code> require <code>swig</code> to build their driver codes.</p>
 <p>If you&rsquo;re familiar with CMU Sphinx, you&rsquo;d realise that there are a lot of common dependencies - which is no coincidence. Vosk comes from Sphinx itself.</p>
 <p><em>If you face some issues with installing <code>swig</code>, don&rsquo;t worry. Just Google your error with the keyword CMU Sphinx.</em></p>
 <h3 id="stage-1-setting-up-vosk-api">Stage 1: Setting up Vosk-API</h3>
 <p>First, we need to download Vosk-API. The Vosk API needs less setup, compared to the original source code.</p>
 <p>Assuming you have git installed on your system, enter in your terminal:</p>
-<pre><code>git clone https://github.com/alphacep/vosk-api.git
-</code></pre><p>If you don&rsquo;t have git, or have some other issues with it,  <a href="https://github.com/alphacep/vosk-api">download Vosk-API from here</a>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git clone https://github.com/alphacep/vosk-api.git
+</code></pre></td></tr></table>
+</div>
+</div><p>If you don&rsquo;t have git, or have some other issues with it,  <a href="https://github.com/alphacep/vosk-api">download Vosk-API from here</a>.</p>
 <ol>
 <li>
 <p>Create a project folder (say speech2command). Download (or clone) the Vosk-api code into a subfolder there.</p>
@@ -311,21 +326,40 @@ sudo apt-get install libpulse-dev jackd libasound2-dev
 </li>
 </ol>
 <p>Your directory structure should look something like this:</p>
-<pre><code>speech2command
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">speech2command
      |_______ vosk-api
      |_______ ...
-</code></pre><p>Now we&rsquo;re good to go.</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>Now we&rsquo;re good to go.</p>
 <h3 id="stage-2-setting-up-a-language-model">Stage 2: Setting up a language model</h3>
 <p>The versatility of Vosk (or CMUSphinx) comes from its ability to use models to recognize various languages.</p>
 <p>Simply put, models are the parts of Vosk that are language-specific and supports speech in different languages. At the time of writing, Vosk has support for more than 18 languages including Greek, Turkish, Chinese, Indian English, etc.</p>
 <p><a href="https://alphacephei.com/vosk/models">The Vosk Model Wiki</a></p>
 <p>In this post, we are going to use the  <a href="http://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip">small American English model</a>. It&rsquo;s compact (around 40 Mb) and reasonably accurate.</p>
 <p>Download the model and extract it in your project folder. Rename the folder you extracted from the .zip file as <code>model</code>. Now, your directory structure should look like this:</p>
-<pre><code>speech2command
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">speech2command
      |_______ vosk-api
      |_______ model
      |_______ ...
-</code></pre><p>Here is a video walkthrough (albeit a bit old):</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>Here is a video walkthrough (albeit a bit old):</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Itic1lFc4Gg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
 <h3 id="stage-3-setting-up-python-packages">Stage 3: Setting up Python Packages</h3>
@@ -340,28 +374,148 @@ sudo apt-get install libpulse-dev jackd libasound2-dev
 </ol>
 <p>The packages <code>platform</code>, <code>sys</code> and <code>json</code> come included in a standard Python 3 installation. We need to install the other packages manually.</p>
 <p>In the command line, type:</p>
-<pre><code>pip install nltk speech_recognition vosk
-</code></pre><p>Wait as the components get installed one by one.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">pip install nltk speech_recognition vosk
+</code></pre></td></tr></table>
+</div>
+</div><p>Wait as the components get installed one by one.</p>
 <h3 id="stage-4-setting-up-nltk-packages">Stage 4: Setting up NLTK Packages</h3>
 <p>Now NLTK is a huge package, with a dedicated index to manage its components. We just downloaded the NLTK core components to get a basic program up and running. We need a few more NLTK components to add to continue with the code.</p>
 <p>The required packages are: <code>stopwords</code>, <code>averaged_perceptron_tagger</code>, <code>punkt</code>, and <code>wordnet</code>.</p>
-<pre><code>nltk.download(&quot;stopwords&quot;)
-nltk.download(&quot;averaged_perceptron_tagger&quot;)
-nltk.download(&quot;punkt&quot;)
-nltk.download(&quot;wordnet&quot;)
-</code></pre><p>Or in one line:</p>
-<pre><code>nltk.download(&quot;stopwords&quot;, &quot;averaged_perceptron_tagger&quot;, &quot;punkt&quot;, &quot;wordnet&quot;)
-</code></pre><h3 id="stage-5-programming-with-vosk-and-nltk">Stage 5: Programming with Vosk and NLTK.</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">nltk.download(&#34;stopwords&#34;)
+nltk.download(&#34;averaged_perceptron_tagger&#34;)
+nltk.download(&#34;punkt&#34;)
+nltk.download(&#34;wordnet&#34;)
+</code></pre></td></tr></table>
+</div>
+</div><p>Or in one line:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">nltk.download(&#34;stopwords&#34;, &#34;averaged_perceptron_tagger&#34;, &#34;punkt&#34;, &#34;wordnet&#34;)
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="stage-5-programming-with-vosk-and-nltk">Stage 5: Programming with Vosk and NLTK.</h3>
 <p>Here comes the fun part! Let&rsquo;s code something in Python to identify speech and convert it to text, using Vosk-API as the backend.</p>
 <p>Make a new Python file (say <code>s2c.py</code>) in your project folder. Now the project folder directory structure should look like:</p>
-<pre><code>speech2command
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">speech2command
      |_______ vosk-api
      |_______ model
      |_______ s2c.py
      |_______ ...
-</code></pre><h4 id="coding-time-now-">Coding time now! 🤩</h4>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="coding-time-now-">Coding time now! 🤩</h4>
 <p>Okay, so the code for the project is given below. The code is pretty clean (or so I hope), and you can understand the code yourself (or just copy-paste it 😜).</p>
-<pre><code>import platform
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">import platform
 import speech_recognition as sr
 import nltk
 from nltk.stem import WordNetLemmatizer
@@ -384,19 +538,19 @@ def listen():
     try:
         cmd = rec.recognize_vosk(audio) # Connecting to Vosk API
     except Exception:
-        print(&quot;Sorry, couldn't hear. Mind trying typing it?&quot;)
+        print(&#34;Sorry, couldn&#39;t hear. Mind trying typing it?&#34;)
         cmd = input()
     return cmd
 
 
 def pos_tagger(tag):
-    if tag.startswith('J'):
+    if tag.startswith(&#39;J&#39;):
         return wordnet.ADJ
-    elif tag.startswith('V'):
+    elif tag.startswith(&#39;V&#39;):
         return wordnet.VERB
-    elif tag.startswith('N'):
+    elif tag.startswith(&#39;N&#39;):
         return wordnet.NOUN
-    elif tag.startswith('R'):
+    elif tag.startswith(&#39;R&#39;):
         return wordnet.ADV
     else:
         return None
@@ -416,33 +570,35 @@ def lemmatizer(src):
 
 
 def make_tokens(lms):
-    stop_words = set(stopwords.words('english')
+    stop_words = set(stopwords.words(&#39;english&#39;)
     src3 = []
     for i in lms:
         if i in stop_words:
             pass
         else:
-            src3.append(str(i)+&quot; &quot;)
-    print(&quot;Keywords are:&quot;, end=' ')
+            src3.append(str(i)+&#34; &#34;)
+    print(&#34;Keywords are:&#34;, end=&#39; &#39;)
     for i in src3:
-        print(i, end=' ')
+        print(i, end=&#39; &#39;)
 
 
 try:
     while True:
-        print(&quot;\nSay some words: &quot;)
+        print(&#34;\nSay some words: &#34;)
         c = listen()
-        print(&quot;Listened value=&quot;,c)
+        print(&#34;Listened value=&#34;,c)
         d = json.loads(c)
-        print(&quot;Command =&quot;, d[&quot;text&quot;])
-        if str(d[&quot;text&quot;]).rstrip(&quot; &quot;) in ['stop', 'exit', 'bye', 'quit', 'terminate', 'kill', 'end']:
-            print(&quot;\n\nExit command triggered from command! Exiting...&quot;)
+        print(&#34;Command =&#34;, d[&#34;text&#34;])
+        if str(d[&#34;text&#34;]).rstrip(&#34; &#34;) in [&#39;stop&#39;, &#39;exit&#39;, &#39;bye&#39;, &#39;quit&#39;, &#39;terminate&#39;, &#39;kill&#39;, &#39;end&#39;]:
+            print(&#34;\n\nExit command triggered from command! Exiting...&#34;)
             sys.exit()
-        lemmatized = lemmatizer(d[&quot;text&quot;])
+        lemmatized = lemmatizer(d[&#34;text&#34;])
         make_tokens(lemmatized)
 except KeyboardInterrupt:
-    print(&quot;\n\nExit command triggered from Keyboard! Exiting...&quot;)
-</code></pre><p>Now run this code, and this will set up a listener that works continuously - with some verbose logs as well - which you can see on your terminal screen. Ignore those logs, they are just for information.</p>
+    print(&#34;\n\nExit command triggered from Keyboard! Exiting...&#34;)
+</code></pre></td></tr></table>
+</div>
+</div><p>Now run this code, and this will set up a listener that works continuously - with some verbose logs as well - which you can see on your terminal screen. Ignore those logs, they are just for information.</p>
 <h4 id="if-you-need-the-source-code-i-made-a-repo-for-it-vosk-demohttpsgithubcomanuran-royvosk-demo">If you need the source code, I made a repo for it: <a href="https://github.com/anuran-roy/vosk-demo">Vosk Demo</a></h4>
 <h3 id="explanation">Explanation:</h3>
 <p>Here is a flowchart that shows exactly how this works:</p>
@@ -657,6 +813,15 @@ except KeyboardInterrupt:
                     
                     
                     
+                    <li>
+                        <a target="_blank" href="https://www.reddit.com/user/Ateenagerstudent">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-reddit fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
                     
                     
             

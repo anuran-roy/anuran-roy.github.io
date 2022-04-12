@@ -40,7 +40,7 @@ Organization The Flow Graph: The backbone Being heavily inspired from Google Ana
       <description>Download as .zip Download as .tar.gz View on Github        Pymetrix-Python What is Pymetrix? Pymetrix is a plug-and-play analytics library written in Python.
 Usage Pymetrix is really easy to integrate with your projects. Here&amp;rsquo;s an example:
 Let&amp;rsquo;s say you want to monitor a method foo() defined as:
-from random import randint def foo(): print(f&amp;#34;Hello world {randint(0,1000000)}!&amp;#34;) After adding the required lines, the code will look something like this:</description>
+1 2 3 4  from random import randint def foo(): print(f&amp;#34;Hello world {randint(0,1000000)}!&amp;#34;)   After adding the required lines, the code will look something like this:</description>
     </item>
     
   </channel>
